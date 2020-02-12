@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The Monero Project
+// Copyright (c) 2018, The Coinevo Project
 //
 // All rights reserved.
 //
@@ -45,8 +45,8 @@
 #include "wipeable_string.h"
 #include "message_transporter.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "wallet.mms"
+#undef COINEVO_DEFAULT_LOG_CATEGORY
+#define COINEVO_DEFAULT_LOG_CATEGORY "wallet.mms"
 #define AUTO_CONFIG_TOKEN_BYTES 4
 #define AUTO_CONFIG_TOKEN_PREFIX "mms"
 
@@ -121,8 +121,8 @@ namespace mms
   {
     std::string label;
     std::string transport_address;
-    bool monero_address_known;
-    cryptonote::account_public_address monero_address;
+    bool coinevo_address_known;
+    cryptonote::account_public_address coinevo_address;
     bool me;
     uint32_t index;
     std::string auto_config_token;
@@ -133,8 +133,8 @@ namespace mms
 
     authorized_signer()
     {
-      monero_address_known = false;
-      memset(&monero_address, 0, sizeof(cryptonote::account_public_address));
+      coinevo_address_known = false;
+      memset(&coinevo_address, 0, sizeof(cryptonote::account_public_address));
       me = false;
       index = 0;
       auto_config_public_key = crypto::null_pkey;
@@ -162,7 +162,7 @@ namespace mms
   {
     std::string label;
     std::string transport_address;
-    cryptonote::account_public_address monero_address;
+    cryptonote::account_public_address coinevo_address;
   };
 
   // Overal .mms file structure, with the "message_store" object serialized to and
@@ -221,10 +221,10 @@ namespace mms
                     uint32_t index,
                     const boost::optional<std::string> &label,
                     const boost::optional<std::string> &transport_address,
-                    const boost::optional<cryptonote::account_public_address> monero_address);
+                    const boost::optional<cryptonote::account_public_address> coinevo_address);
 
     const authorized_signer &get_signer(uint32_t index) const;
-    bool get_signer_index_by_monero_address(const cryptonote::account_public_address &monero_address, uint32_t &index) const;
+    bool get_signer_index_by_coinevo_address(const cryptonote::account_public_address &coinevo_address, uint32_t &index) const;
     bool get_signer_index_by_label(const std::string label, uint32_t &index) const;
     const std::vector<authorized_signer> &get_all_signers() const { return m_signers; };
     bool signer_config_complete() const;
@@ -379,8 +379,8 @@ namespace boost
     {
       a & x.label;
       a & x.transport_address;
-      a & x.monero_address_known;
-      a & x.monero_address;
+      a & x.coinevo_address_known;
+      a & x.coinevo_address;
       a & x.me;
       a & x.index;
       if (ver < 1)
@@ -399,7 +399,7 @@ namespace boost
     {
       a & x.label;
       a & x.transport_address;
-      a & x.monero_address;
+      a & x.coinevo_address;
     }
 
     template <class Archive>

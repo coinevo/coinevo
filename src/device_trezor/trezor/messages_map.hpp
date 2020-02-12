@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The Monero Project
+// Copyright (c) 2017-2019, The Coinevo Project
 //
 // All rights reserved.
 //
@@ -27,8 +27,8 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#ifndef MONERO_MESSAGES_MAP_H
-#define MONERO_MESSAGES_MAP_H
+#ifndef COINEVO_MESSAGES_MAP_H
+#define COINEVO_MESSAGES_MAP_H
 
 #include <string>
 #include <type_traits>
@@ -91,4 +91,4 @@ namespace trezor {
 
 }}
 
-#endif //MONERO_MESSAGES_MAP_H
+#endif //COINEVO_MESSAGES_MAP_H

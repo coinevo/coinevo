@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The Monero Project
+// Copyright (c) 2017-2019, The Coinevo Project
 //
 // All rights reserved.
 //
@@ -34,7 +34,7 @@
 
 #include <vector>
 
-namespace Monero {
+namespace Coinevo {
   
 SubaddressAccount::~SubaddressAccount() {}
   

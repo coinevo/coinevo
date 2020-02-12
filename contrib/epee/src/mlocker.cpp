@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The Monero Project
+// Copyright (c) 2018, The Coinevo Project
 // 
 // All rights reserved.
 // 
@@ -40,8 +40,8 @@
 
 #include <atomic>
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "mlocker"
+#undef COINEVO_DEFAULT_LOG_CATEGORY
+#define COINEVO_DEFAULT_LOG_CATEGORY "mlocker"
 
 // did an mlock operation previously fail? we only
 // want to log an error once and be done with it

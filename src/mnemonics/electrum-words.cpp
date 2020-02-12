@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 // 
 // All rights reserved.
 // 
@@ -62,8 +62,8 @@
 #include "language_base.h"
 #include "singleton.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "mnemonic"
+#undef COINEVO_DEFAULT_LOG_CATEGORY
+#define COINEVO_DEFAULT_LOG_CATEGORY "mnemonic"
 
 namespace crypto
 {

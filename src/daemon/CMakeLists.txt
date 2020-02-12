@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The Monero Project
+# Copyright (c) 2014-2019, The Coinevo Project
 #
 # All rights reserved.
 #
@@ -62,9 +62,9 @@ set(daemon_private_headers
   ../p2p/p2p_protocol_defs.h
   ../p2p/stdafx.h)
 
-monero_private_headers(daemon
+coinevo_private_headers(daemon
   ${daemon_private_headers})
-monero_add_executable(daemon
+coinevo_add_executable(daemon
   ${daemon_sources}
   ${daemon_headers}
   ${daemon_private_headers})
@@ -94,5 +94,5 @@ target_link_libraries(daemon
     ${Blocks})
 set_property(TARGET daemon
   PROPERTY
-    OUTPUT_NAME "monerod")
+    OUTPUT_NAME "coinevod")
 install(TARGETS daemon DESTINATION bin)

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 // 
 // All rights reserved.
 // 
@@ -44,8 +44,8 @@
 #include "cryptonote_protocol/cryptonote_protocol_handler.h"
 #include "rpc_payment.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "daemon.rpc"
+#undef COINEVO_DEFAULT_LOG_CATEGORY
+#define COINEVO_DEFAULT_LOG_CATEGORY "daemon.rpc"
 
 // yes, epee doesn't properly use its full namespace when calling its
 // functions from macros.  *sigh*

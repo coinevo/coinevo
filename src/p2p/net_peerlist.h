@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 // 
 // All rights reserved.
 // 
@@ -279,7 +279,7 @@ namespace nodetool
     // the address accepts incoming connections) or it was the oldest to still fit in the 250 items,
     // so its last_seen is old.
     //
-    // See Cao, Tong et al. "Exploring the Monero Peer-to-Peer Network". https://eprint.iacr.org/2019/411
+    // See Cao, Tong et al. "Exploring the Coinevo Peer-to-Peer Network". https://eprint.iacr.org/2019/411
     //
     const uint32_t pick_depth = anonymize ? depth + depth / 5 : depth;
     bs_head.reserve(pick_depth);

@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The Monero Project
+// Copyright (c) 2017-2019, The Coinevo Project
 //
 // All rights reserved.
 //
@@ -27,8 +27,8 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#ifndef MONERO_DEVICE_COLD_H
-#define MONERO_DEVICE_COLD_H
+#ifndef COINEVO_DEVICE_COLD_H
+#define COINEVO_DEVICE_COLD_H
 
 #include "wallet/wallet2.h"
 #include <boost/optional/optional.hpp>
@@ -165,4 +165,4 @@ namespace hw {
   };
 }
 
-#endif //MONERO_DEVICE_COLD_H
+#endif //COINEVO_DEVICE_COLD_H

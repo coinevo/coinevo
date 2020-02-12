@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The Monero Project
+# Copyright (c) 2014-2019, The Coinevo Project
 #
 # All rights reserved.
 #
@@ -46,7 +46,7 @@ endif()
 cmake_minimum_required(VERSION 2.8.7)
 message(STATUS "CMake version ${CMAKE_VERSION}")
 
-project(monero)
+project(coinevo)
 
 enable_language(C ASM)
 
@@ -210,7 +210,7 @@ set(CMAKE_C_FLAGS_RELEASE "-DNDEBUG ${OPT_FLAGS_RELEASE}")
 set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${OPT_FLAGS_RELEASE}")
 
 # set this to 0 if per-block checkpoint needs to be disabled
-set(PER_BLOCK_CHECKPOINT 1)
+set(PER_BLOCK_CHECKPOINT 0)
 
 if(PER_BLOCK_CHECKPOINT)
   add_definitions("-DPER_BLOCK_CHECKPOINT")
@@ -360,7 +360,7 @@ if(SANITIZE)
 endif()
 
 # Set default blockchain storage location:
-# memory was the default in Cryptonote before Monero implemented LMDB, it still works but is unnecessary.
+# memory was the default in Cryptonote before Coinevo implemented LMDB, it still works but is unnecessary.
 # set(DATABASE memory)
 set(DATABASE lmdb)
 message(STATUS "Using LMDB as default DB type")
@@ -786,7 +786,7 @@ else()
     set(DEBUG_FLAGS "${DEBUG_FLAGS} -O0 ")
   endif()
 
-  # At least some CLANGs default to not enough for monero
+  # At least some CLANGs default to not enough for coinevo
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ftemplate-depth=900")
 
   if(NOT DEFINED USE_LTO_DEFAULT)

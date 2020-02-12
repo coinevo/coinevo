@@ -1,4 +1,4 @@
-// Copyright (c) 2018, The Monero Project
+// Copyright (c) 2018, The Coinevo Project
 // 
 // All rights reserved.
 // 
@@ -29,8 +29,8 @@
 #include <string.h>
 #include "net/buffer.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "net.buffer"
+#undef COINEVO_DEFAULT_LOG_CATEGORY
+#define COINEVO_DEFAULT_LOG_CATEGORY "net.buffer"
 
 namespace epee
 {

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 // 
 // All rights reserved.
 // 
@@ -35,8 +35,8 @@
 #include "common/i18n.h"
 #include "translation_files.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "i18n"
+#undef COINEVO_DEFAULT_LOG_CATEGORY
+#define COINEVO_DEFAULT_LOG_CATEGORY "i18n"
 
 #define MAX_LANGUAGE_SIZE 16
 

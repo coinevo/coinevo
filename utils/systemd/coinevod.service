@@ -1,0 +1,36 @@
+[Unit]
+Description=Coinevo Full Node
+After=network.target
+
+[Service]
+User=coinevo
+Group=coinevo
+WorkingDirectory=~
+RuntimeDirectory=coinevo
+
+# Clearnet config
+#
+Type=forking
+PIDFile=/run/coinevo/coinevod.pid
+ExecStart=/usr/bin/coinevod --config-file /etc/coinevod.conf \
+    --detach --pidfile /run/coinevo/coinevod.pid
+
+# Tor config
+#
+## We have to use simple, not forking, because we cannot pass --detach
+## because stderr/stdout is not available when detached, but torsocks
+## attempts to write to it, and fails with 'invalid argument', causing
+## coinevod to fail.
+#Type=simple
+#Environment=DNS_PUBLIC=tcp
+## The following is needed only when accessing wallet from a different
+## host in the LAN, VPN, etc, the RPC must bind to 0.0.0.0, but
+## by default torsocks only allows binding to localhost.
+#Environment=TORSOCKS_ALLOW_INBOUND=1
+#ExecStart=/usr/bin/torsocks /usr/bin/coinevod --config-file /etc/coinevod.conf \
+#    --non-interactive
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

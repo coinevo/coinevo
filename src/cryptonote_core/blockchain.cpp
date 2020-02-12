@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 //
 // All rights reserved.
 //
@@ -57,8 +57,8 @@
 #include "common/varint.h"
 #include "common/pruning.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "blockchain"
+#undef COINEVO_DEFAULT_LOG_CATEGORY
+#define COINEVO_DEFAULT_LOG_CATEGORY "blockchain"
 
 #define FIND_BLOCKCHAIN_SUPPLEMENT_MAX_SIZE (100*1024*1024) // 100 MB
 
@@ -305,9 +305,9 @@ bool Blockchain::init(BlockchainDB* db, const network_type nettype, bool offline
     if (m_nettype ==  FAKECHAIN || m_nettype == STAGENET)
       m_hardfork = new HardFork(*db, 1, 0);
     else if (m_nettype == TESTNET)
-      m_hardfork = new HardFork(*db, 1, testnet_hard_fork_version_1_till);
+      m_hardfork = new HardFork(*db, 1, 0);
     else
-      m_hardfork = new HardFork(*db, 1, mainnet_hard_fork_version_1_till);
+      m_hardfork = new HardFork(*db, 1, 0);
   }
   if (m_nettype == FAKECHAIN)
   {
@@ -4241,7 +4241,7 @@ void Blockchain::check_against_checkpoints(const checkpoints& points, bool enfor
       }
       else
       {
-        LOG_ERROR("WARNING: local blockchain failed to pass a MoneroPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option");
+        LOG_ERROR("WARNING: local blockchain failed to pass a CoinevoPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option");
       }
     }
   }

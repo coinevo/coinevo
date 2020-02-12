@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The Monero Project
+# Copyright (c) 2014-2019, The Coinevo Project
 #
 # All rights reserved.
 #
@@ -88,9 +88,9 @@ set(common_private_headers
   timings.h
   combinator.h)
 
-monero_private_headers(common
+coinevo_private_headers(common
   ${common_private_headers})
-monero_add_library(common
+coinevo_add_library(common
   ${common_sources}
   ${common_headers}
   ${common_private_headers}
@@ -110,5 +110,5 @@ target_link_libraries(common
     ${OPENSSL_LIBRARIES}
     ${EXTRA_LIBRARIES})
 
-#monero_install_headers(common
+#coinevo_install_headers(common
 #  ${common_headers})

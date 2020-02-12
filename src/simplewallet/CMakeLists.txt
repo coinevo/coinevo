@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The Monero Project
+# Copyright (c) 2014-2019, The Coinevo Project
 #
 # All rights reserved.
 #
@@ -34,9 +34,9 @@ set(simplewallet_headers)
 set(simplewallet_private_headers
   simplewallet.h)
 
-monero_private_headers(simplewallet
+coinevo_private_headers(simplewallet
   ${simplewallet_private_headers})
-monero_add_executable(simplewallet
+coinevo_add_executable(simplewallet
   ${simplewallet_sources}
   ${simplewallet_headers}
   ${simplewallet_private_headers})
@@ -61,5 +61,5 @@ target_link_libraries(simplewallet
     ${EXTRA_LIBRARIES})
 set_property(TARGET simplewallet
   PROPERTY
-    OUTPUT_NAME "monero-wallet-cli")
+    OUTPUT_NAME "coinevo-wallet-cli")
 install(TARGETS simplewallet DESTINATION bin)

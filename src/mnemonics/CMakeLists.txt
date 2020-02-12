@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The Monero Project
+# Copyright (c) 2014-2019, The Coinevo Project
 #
 # All rights reserved.
 #
@@ -49,9 +49,9 @@ set(mnemonics_private_headers
   esperanto.h
   lojban.h)
 
-monero_private_headers(mnemonics
+coinevo_private_headers(mnemonics
   ${mnemonics_private_headers})
-monero_add_library(mnemonics
+coinevo_add_library(mnemonics
   ${mnemonics_sources}
   ${mnemonics_headers}
   ${mnemonics_private_headers})

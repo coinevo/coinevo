@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The Monero Project
+# Copyright (c) 2014-2019, The Coinevo Project
 #
 # All rights reserved.
 #
@@ -34,9 +34,9 @@ set(hardforks_headers
 
 set(hardforks_private_headers)
 
-monero_private_headers(hardforks
+coinevo_private_headers(hardforks
   ${hardforks_private_headers})
-monero_add_library(hardforks
+coinevo_add_library(hardforks
   ${hardforks_sources}
   ${hardforks_headers}
   ${hardforks_private_headers})

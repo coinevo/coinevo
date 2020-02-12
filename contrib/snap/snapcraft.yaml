@@ -1,31 +1,31 @@
-name: monero
+name: coinevo
 version: 0.11.1.0-1
-summary: "Monero: the secure, private, untraceable cryptocurrency https://getmonero.org"
+summary: "Coinevo: the secure, private, untraceable cryptocurrency https://coinevo.tech"
 description: |
-    Monero is a private, secure, untraceable, decentralised digital currency.
+    Coinevo is a private, secure, untraceable, decentralised digital currency.
     You are your bank, you control your funds, and nobody can trace your transfers
     unless you allow them to do so.
 grade: devel
 confinement: strict
 
 apps:
-    monerod:
+    coinevod:
         daemon: forking
         command: |
-          monerod-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/monerod.conf
+          coinevod-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/coinevod.conf
         plugs:
             - network
             - network-bind
-    monero-wallet-rpc:
+    coinevo-wallet-rpc:
         command: |
-          monero-wallet-rpc --log-file ${SNAP_USER_DATA}
+          coinevo-wallet-rpc --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
             - network-bind
-    monero-wallet-cli:
+    coinevo-wallet-cli:
         command: |
-          monero-wallet-cli --log-file ${SNAP_USER_DATA}
+          coinevo-wallet-cli --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
@@ -71,8 +71,8 @@ parts:
         plugin: dump
         source: .
         organize:
-            contrib/snap/monerod.conf: etc/monerod.conf
-            contrib/snap/monerod-wrapper: bin/monerod-wrapper
+            contrib/snap/coinevod.conf: etc/coinevod.conf
+            contrib/snap/coinevod-wrapper: bin/coinevod-wrapper
         prime:
             - etc
             - bin

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 //
 // All rights reserved.
 //
@@ -53,14 +53,14 @@
 using namespace std;
 using namespace cryptonote;
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "WalletAPI"
+#undef COINEVO_DEFAULT_LOG_CATEGORY
+#define COINEVO_DEFAULT_LOG_CATEGORY "WalletAPI"
 
-namespace Monero {
+namespace Coinevo {
 
 namespace {
     // copy-pasted from simplewallet
-    static const size_t DEFAULT_MIXIN = 6;
+    static const size_t DEFAULT_MIXIN = 21;
     static const int    DEFAULT_REFRESH_INTERVAL_MILLIS = 1000 * 10;
     // limit maximum refresh interval as one minute
     static const int    MAX_REFRESH_INTERVAL_MILLIS = 1000 * 60 * 1;
@@ -72,7 +72,7 @@ namespace {
     std::string get_default_ringdb_path(cryptonote::network_type nettype)
     {
       boost::filesystem::path dir = tools::get_default_data_dir();
-      // remove .bitmonero, replace with .shared-ringdb
+      // remove .coinevo, replace with .shared-ringdb
       dir = dir.remove_filename();
       dir /= ".shared-ringdb";
       if (nettype == cryptonote::TESTNET)
@@ -399,19 +399,19 @@ void Wallet::init(const char *argv0, const char *default_log_base_name, const st
 }
 
 void Wallet::debug(const std::string &category, const std::string &str) {
-    MCDEBUG(category.empty() ? MONERO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+    MCDEBUG(category.empty() ? COINEVO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 void Wallet::info(const std::string &category, const std::string &str) {
-    MCINFO(category.empty() ? MONERO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+    MCINFO(category.empty() ? COINEVO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 void Wallet::warning(const std::string &category, const std::string &str) {
-    MCWARNING(category.empty() ? MONERO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+    MCWARNING(category.empty() ? COINEVO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 void Wallet::error(const std::string &category, const std::string &str) {
-    MCERROR(category.empty() ? MONERO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+    MCERROR(category.empty() ? COINEVO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 ///////////////////////// WalletImpl implementation ////////////////////////
@@ -2470,4 +2470,4 @@ void WalletImpl::deviceShowAddress(uint32_t accountIndex, uint32_t addressIndex,
 }
 } // namespace
 
-namespace Bitmonero = Monero;
+namespace Bitcoinevo = Coinevo;

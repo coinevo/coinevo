@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 //
 // All rights reserved.
 //
@@ -43,8 +43,8 @@ using namespace epee;
 #include "int-util.h"
 #include "common/dns_utils.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "cn"
+#undef COINEVO_DEFAULT_LOG_CATEGORY
+#define COINEVO_DEFAULT_LOG_CATEGORY "cn"
 
 namespace cryptonote {
 
@@ -86,7 +86,11 @@ namespace cryptonote {
     const int target = version < 2 ? DIFFICULTY_TARGET_V1 : DIFFICULTY_TARGET_V2;
     const int target_minutes = target / 60;
     const int emission_speed_factor = EMISSION_SPEED_FACTOR_PER_MINUTE - (target_minutes-1);
-
+    if (already_generated_coins == 0)
+    {
+      reward = 400000000000000000;
+      return true;
+    }
     uint64_t base_reward = (MONEY_SUPPLY - already_generated_coins) >> emission_speed_factor;
     if (base_reward < FINAL_SUBSIDY_PER_MINUTE*target_minutes)
     {

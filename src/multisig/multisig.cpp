@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The Monero Project
+// Copyright (c) 2017-2019, The Coinevo Project
 // 
 // All rights reserved.
 // 
@@ -34,8 +34,8 @@
 #include "cryptonote_basic/cryptonote_format_utils.h"
 #include "multisig.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "multisig"
+#undef COINEVO_DEFAULT_LOG_CATEGORY
+#define COINEVO_DEFAULT_LOG_CATEGORY "multisig"
 
 using namespace std;
 

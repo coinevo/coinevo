@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 //
 // All rights reserved.
 //
@@ -28,8 +28,8 @@
 
 #include "hardforks.h"
 
-#undef MONERO_DEFAULT_LOG_CATEGORY
-#define MONERO_DEFAULT_LOG_CATEGORY "blockchain.hardforks"
+#undef COINEVO_DEFAULT_LOG_CATEGORY
+#define COINEVO_DEFAULT_LOG_CATEGORY "blockchain.hardforks"
 
 const hardfork_t mainnet_hard_forks[] = {
   // version 1 from the start of the blockchain

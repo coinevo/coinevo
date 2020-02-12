@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 //
 // All rights reserved.
 //
@@ -42,7 +42,7 @@
 
 using namespace std;
 
-namespace Monero {
+namespace Coinevo {
 
 UnsignedTransaction::~UnsignedTransaction() {}
 
@@ -317,5 +317,5 @@ uint64_t UnsignedTransactionImpl::minMixinCount() const
 
 } // namespace
 
-namespace Bitmonero = Monero;
+namespace Bitcoinevo = Coinevo;
 

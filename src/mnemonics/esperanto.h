@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 // 
 // All rights reserved.
 // 
@@ -1097,7 +1097,7 @@ namespace Language
       "mokadi",
       "molaro",
       "momento",
-      "monero",
+      "coinevo",
       "mopso",
       "mordi",
       "moskito",

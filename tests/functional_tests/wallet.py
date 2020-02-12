@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #encoding=utf-8
 
-# Copyright (c) 2019 The Monero Project
+# Copyright (c) 2019 The Coinevo Project
 # 
 # All rights reserved.
 # 

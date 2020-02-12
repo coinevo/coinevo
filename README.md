@@ -1,6 +1,6 @@
-# Monero
+# Coinevo
 
-Copyright (c) 2014-2019 The Monero Project.   
+Copyright (c) 2014-2019 The Coinevo Project.   
 Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
 ## Table of Contents
@@ -20,7 +20,7 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
   - [Contributing](#contributing)
   - [Scheduled software upgrades](#scheduled-software-upgrades)
   - [Release staging schedule and protocol](#release-staging-schedule-and-protocol)
-  - [Compiling Monero from source](#compiling-monero-from-source)
+  - [Compiling Coinevo from source](#compiling-coinevo-from-source)
     - [Dependencies](#dependencies)
   - [Internationalization](#Internationalization)
   - [Using Tor](#using-tor)
@@ -29,35 +29,35 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
 ## Development resources
 
-- Web: [getmonero.org](https://getmonero.org)
-- Forum: [forum.getmonero.org](https://forum.getmonero.org)
-- Mail: [dev@getmonero.org](mailto:dev@getmonero.org)
-- GitHub: [https://github.com/monero-project/monero](https://github.com/monero-project/monero)
-- IRC: [#monero-dev on Freenode](https://webchat.freenode.net/?randomnick=1&channels=%23monero-dev&prompt=1&uio=d4)
+- Web: [coinevo.tech](https://coinevo.tech)
+- Forum: [forum.coinevo.tech](https://forum.coinevo.tech)
+- Mail: [dev@coinevo.tech](mailto:dev@coinevo.tech)
+- GitHub: [https://github.com/coinevo/coinevo](https://github.com/coinevo/coinevo)
+- IRC: [#coinevo-dev on Freenode](https://webchat.freenode.net/?randomnick=1&channels=%23coinevo-dev&prompt=1&uio=d4)
 
 ## Vulnerability response
 
-- Our [Vulnerability Response Process](https://github.com/monero-project/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md) encourages responsible disclosure
-- We are also available via [HackerOne](https://hackerone.com/monero)
+- Our [Vulnerability Response Process](https://github.com/coinevo/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md) encourages responsible disclosure
+- We are also available via [HackerOne](https://hackerone.com/coinevo)
 
 ## Research
 
-The [Monero Research Lab](https://src.getmonero.org/resources/research-lab/) is an open forum where the community coordinates research into Monero cryptography, protocols, fungibility, analysis, and more. We welcome collaboration and contributions from outside researchers! Because not all Lab work and publications are distributed as traditional preprints or articles, they may be easy to miss if you are conducting literature reviews for your own Monero research. You are encouraged to get in touch with our researchers if you have questions, wish to collaborate, or would like guidance to help avoid unnecessarily duplicating earlier or known work.
+The [Coinevo Research Lab](https://src.coinevo.tech/resources/research-lab/) is an open forum where the community coordinates research into Coinevo cryptography, protocols, fungibility, analysis, and more. We welcome collaboration and contributions from outside researchers! Because not all Lab work and publications are distributed as traditional preprints or articles, they may be easy to miss if you are conducting literature reviews for your own Coinevo research. You are encouraged to get in touch with our researchers if you have questions, wish to collaborate, or would like guidance to help avoid unnecessarily duplicating earlier or known work.
 
-Our researchers are available on IRC in [#monero-research-lab on Freenode](https://webchat.freenode.net/?randomnick=1&channels=%23monero-research-lab&prompt=1&uio=d4) or by email:
+Our researchers are available on IRC in [#coinevo-research-lab on Freenode](https://webchat.freenode.net/?randomnick=1&channels=%23coinevo-research-lab&prompt=1&uio=d4) or by email:
 
-- Sarang Noether, Ph.D.: [sarang@getmonero.org](mailto:sarang@getmonero.org) or [sarang.noether@protonmail.com](mailto:sarang.noether@protonmail.com); [research repository](https://github.com/SarangNoether/research-lab)
-- Surae Noether (Brandon Goodell), Ph.D.: [surae@getmonero.org](mailto:surae@getmonero.org) or [surae.noether@protonmail.com](mailto:surae.noether@protonmail.com); [research repository](https://github.com/b-g-goodell/research-lab)
+- Sarang Noether, Ph.D.: [sarang@coinevo.tech](mailto:sarang@coinevo.tech) or [sarang.noether@protonmail.com](mailto:sarang.noether@protonmail.com); [research repository](https://github.com/SarangNoether/research-lab)
+- Surae Noether (Brandon Goodell), Ph.D.: [surae@coinevo.tech](mailto:surae@coinevo.tech) or [surae.noether@protonmail.com](mailto:surae.noether@protonmail.com); [research repository](https://github.com/b-g-goodell/research-lab)
 
 ## Announcements
 
-- You can subscribe to an [announcement listserv](https://lists.getmonero.org) to get critical announcements from the Monero core team. The announcement list can be very helpful for knowing when software updates are needed.
+- You can subscribe to an [announcement listserv](https://lists.coinevo.tech) to get critical announcements from the Coinevo core team. The announcement list can be very helpful for knowing when software updates are needed.
 
 ## Translations
-The CLI wallet is available in different languages. If you want to help translate it, see our self-hosted localization platform, Weblate, on [translate.getmonero.org](https://translate.getmonero.org/projects/CLI/). Every translation *must* be uploaded on the platform, pull requests directly editing the code in this repository will be closed. If you need help with Weblate, you can find a guide with screenshots [here](https://github.com/monero-ecosystem/monero-translations/blob/master/weblate.md).
+The CLI wallet is available in different languages. If you want to help translate it, see our self-hosted localization platform, Weblate, on [translate.coinevo.tech](https://translate.coinevo.tech/projects/CLI/). Every translation *must* be uploaded on the platform, pull requests directly editing the code in this repository will be closed. If you need help with Weblate, you can find a guide with screenshots [here](https://github.com/coinevo-ecosystem/coinevo-translations/blob/master/weblate.md).
 &nbsp;
 
-If you need help/support/info about translations, contact the localization workgroup. You can find the complete list of contacts on the repository of the workgroup: [monero-translations](https://github.com/monero-ecosystem/monero-translations#contacts).
+If you need help/support/info about translations, contact the localization workgroup. You can find the complete list of contacts on the repository of the workgroup: [coinevo-translations](https://github.com/coinevo-ecosystem/coinevo-translations#contacts).
 
 ## Build Status
 
@@ -67,63 +67,63 @@ These builds are of the master branch, which is used for active development and 
 
 | Operating System      | Processor | Status |
 | --------------------- | -------- |--------|
-| Ubuntu 16.04          |  i686    | [![Ubuntu 16.04 i686](https://build.getmonero.org/png?builder=monero-static-ubuntu-i686)](https://build.getmonero.org/builders/monero-static-ubuntu-i686)
-| Ubuntu 16.04          |  amd64   | [![Ubuntu 16.04 amd64](https://build.getmonero.org/png?builder=monero-static-ubuntu-amd64)](https://build.getmonero.org/builders/monero-static-ubuntu-amd64)
-| Ubuntu 16.04          |  armv7   | [![Ubuntu 16.04 armv7](https://build.getmonero.org/png?builder=monero-static-ubuntu-arm7)](https://build.getmonero.org/builders/monero-static-ubuntu-arm7)
-| Debian Stable         |  armv8   | [![Debian armv8](https://build.getmonero.org/png?builder=monero-static-debian-armv8)](https://build.getmonero.org/builders/monero-static-debian-armv8)
-| macOS 10.11             |  amd64   | [![macOS 10.11 amd64](https://build.getmonero.org/png?builder=monero-static-osx-10.11)](https://build.getmonero.org/builders/monero-static-osx-10.11)
-| macOS 10.12             |  amd64   | [![macOS 10.12 amd64](https://build.getmonero.org/png?builder=monero-static-osx-10.12)](https://build.getmonero.org/builders/monero-static-osx-10.12)
-| macOS 10.13             |  amd64   | [![macOS 10.13 amd64](https://build.getmonero.org/png?builder=monero-static-osx-10.13)](https://build.getmonero.org/builders/monero-static-osx-10.13)
-| FreeBSD 11            |  amd64   | [![FreeBSD 11 amd64](https://build.getmonero.org/png?builder=monero-static-freebsd64)](https://build.getmonero.org/builders/monero-static-freebsd64)
-| DragonFly BSD 4.6     |  amd64   | [![DragonFly BSD amd64](https://build.getmonero.org/png?builder=monero-static-dragonflybsd-amd64)](https://build.getmonero.org/builders/monero-static-dragonflybsd-amd64)
-| Windows (MSYS2/MinGW) |  i686    | [![Windows (MSYS2/MinGW) i686](https://build.getmonero.org/png?builder=monero-static-win32)](https://build.getmonero.org/builders/monero-static-win32)
-| Windows (MSYS2/MinGW) |  amd64   | [![Windows (MSYS2/MinGW) amd64](https://build.getmonero.org/png?builder=monero-static-win64)](https://build.getmonero.org/builders/monero-static-win64)
+| Ubuntu 16.04          |  i686    | [![Ubuntu 16.04 i686](https://build.coinevo.tech/png?builder=coinevo-static-ubuntu-i686)](https://build.coinevo.tech/builders/coinevo-static-ubuntu-i686)
+| Ubuntu 16.04          |  amd64   | [![Ubuntu 16.04 amd64](https://build.coinevo.tech/png?builder=coinevo-static-ubuntu-amd64)](https://build.coinevo.tech/builders/coinevo-static-ubuntu-amd64)
+| Ubuntu 16.04          |  armv7   | [![Ubuntu 16.04 armv7](https://build.coinevo.tech/png?builder=coinevo-static-ubuntu-arm7)](https://build.coinevo.tech/builders/coinevo-static-ubuntu-arm7)
+| Debian Stable         |  armv8   | [![Debian armv8](https://build.coinevo.tech/png?builder=coinevo-static-debian-armv8)](https://build.coinevo.tech/builders/coinevo-static-debian-armv8)
+| macOS 10.11             |  amd64   | [![macOS 10.11 amd64](https://build.coinevo.tech/png?builder=coinevo-static-osx-10.11)](https://build.coinevo.tech/builders/coinevo-static-osx-10.11)
+| macOS 10.12             |  amd64   | [![macOS 10.12 amd64](https://build.coinevo.tech/png?builder=coinevo-static-osx-10.12)](https://build.coinevo.tech/builders/coinevo-static-osx-10.12)
+| macOS 10.13             |  amd64   | [![macOS 10.13 amd64](https://build.coinevo.tech/png?builder=coinevo-static-osx-10.13)](https://build.coinevo.tech/builders/coinevo-static-osx-10.13)
+| FreeBSD 11            |  amd64   | [![FreeBSD 11 amd64](https://build.coinevo.tech/png?builder=coinevo-static-freebsd64)](https://build.coinevo.tech/builders/coinevo-static-freebsd64)
+| DragonFly BSD 4.6     |  amd64   | [![DragonFly BSD amd64](https://build.coinevo.tech/png?builder=coinevo-static-dragonflybsd-amd64)](https://build.coinevo.tech/builders/coinevo-static-dragonflybsd-amd64)
+| Windows (MSYS2/MinGW) |  i686    | [![Windows (MSYS2/MinGW) i686](https://build.coinevo.tech/png?builder=coinevo-static-win32)](https://build.coinevo.tech/builders/coinevo-static-win32)
+| Windows (MSYS2/MinGW) |  amd64   | [![Windows (MSYS2/MinGW) amd64](https://build.coinevo.tech/png?builder=coinevo-static-win64)](https://build.coinevo.tech/builders/coinevo-static-win64)
 
 ## Coverage
 
 | Type      | Status |
 |-----------|--------|
 | Coverity  | [![Coverity Status](https://scan.coverity.com/projects/9657/badge.svg)](https://scan.coverity.com/projects/9657/)
-| Coveralls | [![Coveralls Status](https://coveralls.io/repos/github/monero-project/monero/badge.svg?branch=master)](https://coveralls.io/github/monero-project/monero?branch=master)
+| Coveralls | [![Coveralls Status](https://coveralls.io/repos/github/coinevo/coinevo/badge.svg?branch=master)](https://coveralls.io/github/coinevo/coinevo?branch=master)
 | License   | [![License](https://img.shields.io/badge/license-BSD3-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Introduction
 
-Monero is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, and nobody can trace your transfers unless you allow them to do so.
+Coinevo is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, and nobody can trace your transfers unless you allow them to do so.
 
-**Privacy:** Monero uses a cryptographically sound system to allow you to send and receive funds without your transactions being easily revealed on the blockchain (the ledger of transactions that everyone has). This ensures that your purchases, receipts, and all transfers remain absolutely private by default.
+**Privacy:** Coinevo uses a cryptographically sound system to allow you to send and receive funds without your transactions being easily revealed on the blockchain (the ledger of transactions that everyone has). This ensures that your purchases, receipts, and all transfers remain absolutely private by default.
 
 **Security:** Using the power of a distributed peer-to-peer consensus network, every transaction on the network is cryptographically secured. Individual wallets have a 25 word mnemonic seed that is only displayed once, and can be written down to backup the wallet. Wallet files are encrypted with a passphrase to ensure they are useless if stolen.
 
-**Untraceability:** By taking advantage of ring signatures, a special property of a certain type of cryptography, Monero is able to ensure that transactions are not only untraceable, but have an optional measure of ambiguity that ensures that transactions cannot easily be tied back to an individual user or computer.
+**Untraceability:** By taking advantage of ring signatures, a special property of a certain type of cryptography, Coinevo is able to ensure that transactions are not only untraceable, but have an optional measure of ambiguity that ensures that transactions cannot easily be tied back to an individual user or computer.
 
-**Decentralization:** The utility of monero depends on its decentralised peer-to-peer consensus network - anyone should be able to run the monero software, validate the integrity of the blockchain, and participate in all aspects of the monero network using consumer-grade commodity hardware. Decentralization of the monero network is maintained by software development that minimizes the costs of running the monero software and inhibits the proliferation of specialized, non-commodity hardware.  
+**Decentralization:** The utility of coinevo depends on its decentralised peer-to-peer consensus network - anyone should be able to run the coinevo software, validate the integrity of the blockchain, and participate in all aspects of the coinevo network using consumer-grade commodity hardware. Decentralization of the coinevo network is maintained by software development that minimizes the costs of running the coinevo software and inhibits the proliferation of specialized, non-commodity hardware.  
 
 ## About this project
 
-This is the core implementation of Monero. It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of Monero that uses the protocol and network in a compatible manner.
+This is the core implementation of Coinevo. It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of Coinevo that uses the protocol and network in a compatible manner.
 
 As with many development projects, the repository on Github is considered to be the "staging" area for the latest changes. Before changes are merged into that branch on the main repository, they are tested by individual developers in their own branches, submitted as a pull request, and then subsequently tested by contributors who focus on testing and code reviews. That having been said, the repository should be carefully considered before using it in a production environment, unless there is a patch in the repository for a particular show-stopping issue you are experiencing. It is generally a better idea to use a tagged release for stability.
 
-**Anyone is welcome to contribute to Monero's codebase!** If you have a fix or code change, feel free to submit it as a pull request directly to the "master" branch. In cases where the change is relatively small or does not affect other parts of the codebase it may be merged in immediately by any one of the collaborators. On the other hand, if the change is particularly large or complex, it is expected that it will be discussed at length either well in advance of the pull request being submitted, or even directly on the pull request.
+**Anyone is welcome to contribute to Coinevo's codebase!** If you have a fix or code change, feel free to submit it as a pull request directly to the "master" branch. In cases where the change is relatively small or does not affect other parts of the codebase it may be merged in immediately by any one of the collaborators. On the other hand, if the change is particularly large or complex, it is expected that it will be discussed at length either well in advance of the pull request being submitted, or even directly on the pull request.
 
 ## Supporting the project
 
-Monero is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both Monero and Bitcoin donations can be made to **donate.getmonero.org** if using a client that supports the [OpenAlias](https://openalias.org) standard. Alternatively you can send XMR to the Monero donation address via the `donate` command (type `help` in the command-line wallet for details).
+Coinevo is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both Coinevo and Bitcoin donations can be made to **donate.coinevo.tech** if using a client that supports the [OpenAlias](https://openalias.org) standard. Alternatively you can send EVO to the Coinevo donation address via the `donate` command (type `help` in the command-line wallet for details).
 
-The Monero donation address is: `44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A` (viewkey: `f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501`)
+The Coinevo donation address is: `44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A` (viewkey: `f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501`)
 
 The Bitcoin donation address is: `1KTexdemPdxSBcG55heUuTjDRYqbC5ZL8H`
 
 Core development funding and/or some supporting services are also graciously provided by sponsors:
 
-[<img width="80" src="https://static.getmonero.org/images/sponsors/mymonero.png"/>](https://mymonero.com)
-[<img width="150" src="https://static.getmonero.org/images/sponsors/kitware.png?1"/>](https://kitware.com)
-[<img width="100" src="https://static.getmonero.org/images/sponsors/dome9.png"/>](https://dome9.com)
-[<img width="150" src="https://static.getmonero.org/images/sponsors/araxis.png"/>](https://araxis.com)
-[<img width="150" src="https://static.getmonero.org/images/sponsors/jetbrains.png"/>](https://www.jetbrains.com/)
-[<img width="150" src="https://static.getmonero.org/images/sponsors/navicat.png"/>](https://www.navicat.com/)
-[<img width="150" src="https://static.getmonero.org/images/sponsors/symas.png"/>](https://www.symas.com/)
+[<img width="80" src="https://static.coinevo.tech/images/sponsors/mycoinevo.png"/>](https://mycoinevo.com)
+[<img width="150" src="https://static.coinevo.tech/images/sponsors/kitware.png?1"/>](https://kitware.com)
+[<img width="100" src="https://static.coinevo.tech/images/sponsors/dome9.png"/>](https://dome9.com)
+[<img width="150" src="https://static.coinevo.tech/images/sponsors/araxis.png"/>](https://araxis.com)
+[<img width="150" src="https://static.coinevo.tech/images/sponsors/jetbrains.png"/>](https://www.jetbrains.com/)
+[<img width="150" src="https://static.coinevo.tech/images/sponsors/navicat.png"/>](https://www.navicat.com/)
+[<img width="150" src="https://static.coinevo.tech/images/sponsors/symas.png"/>](https://www.symas.com/)
 
 There are also several mining pools that kindly donate a portion of their fees, [a list of them can be found on our Bitcointalk post](https://bitcointalk.org/index.php?topic=583449.0).
 
@@ -137,11 +137,11 @@ If you want to help out, see [CONTRIBUTING](CONTRIBUTING.md) for a set of guidel
 
 ## Scheduled software upgrades
 
-Monero uses a fixed-schedule software upgrade (hard fork) mechanism to implement new features. This means that users of Monero (end users and service providers) should run current versions and upgrade their software on a regular schedule. Software upgrades occur during the months of April and October. The required software for these upgrades will be available prior to the scheduled date. Please check the repository prior to this date for the proper Monero software version. Below is the historical schedule and the projected schedule for the next upgrade.
+Coinevo uses a fixed-schedule software upgrade (hard fork) mechanism to implement new features. This means that users of Coinevo (end users and service providers) should run current versions and upgrade their software on a regular schedule. Software upgrades occur during the months of April and October. The required software for these upgrades will be available prior to the scheduled date. Please check the repository prior to this date for the proper Coinevo software version. Below is the historical schedule and the projected schedule for the next upgrade.
 Dates are provided in the format YYYY-MM-DD.
 
 
-| Software upgrade block height  | Date       | Fork version      | Minimum Monero version | Recommended Monero version | Details                                                                            |  
+| Software upgrade block height  | Date       | Fork version      | Minimum Coinevo version | Recommended Coinevo version | Details                                                                            |  
 | ------------------------------ | -----------| ----------------- | ---------------------- | -------------------------- | ---------------------------------------------------------------------------------- |
 | 1009827                        | 2016-03-22 | v2                | v0.9.4                 | v0.9.4                     | Allow only >= ringsize 3, blocktime = 120 seconds, fee-free blocksize 60 kb       |
 | 1141317                        | 2016-09-21 | v3                | v0.9.4                 | v0.10.0                    | Splits coinbase into denominations  |
@@ -163,7 +163,7 @@ X's indicate that these details have not been determined as of commit date.
 
 Approximately three months prior to a scheduled software upgrade, a branch from master will be created with the new release version tag. Pull requests that address bugs should then be made to both master and the new release branch. Pull requests that require extensive review and testing (generally, optimizations and new features) should *not* be made to the release branch.
 
-## Compiling Monero from source
+## Compiling Coinevo from source
 
 ### Dependencies
 
@@ -221,15 +221,15 @@ FreeBSD one liner for required to build dependencies
 
 Clone recursively to pull-in needed submodule(s):
 
-`$ git clone --recursive https://github.com/monero-project/monero`
+`$ git clone --recursive https://github.com/coinevo/coinevo`
 
 If you already have a repo cloned, initialize and update:
 
-`$ cd monero && git submodule init && git submodule update`
+`$ cd coinevo && git submodule init && git submodule update`
 
 ### Build instructions
 
-Monero uses the CMake build system and a top-level [Makefile](Makefile) that
+Coinevo uses the CMake build system and a top-level [Makefile](Makefile) that
 invokes cmake commands as needed.
 
 #### On Linux and macOS
@@ -238,7 +238,7 @@ invokes cmake commands as needed.
 * Change to the root of the source code directory, change to the most recent release branch, and build:
 
     ```bash
-    cd monero
+    cd coinevo
     git checkout release-v0.15
     make
     ```
@@ -252,16 +252,16 @@ invokes cmake commands as needed.
     https://github.com/zeromq/cppzmq to `/usr/local/include` should fix that error.
 
     *Note*: The instructions above will compile the most stable release of the
-    Monero software. If you would like to use and test the most recent software,
+    Coinevo software. If you would like to use and test the most recent software,
     use ```git checkout master```. The master branch may contain updates that are
     both unstable and incompatible with release software, though testing is always
     encouraged.
 
 * The resulting executables can be found in `build/release/bin`
 
-* Add `PATH="$PATH:$HOME/monero/build/release/bin"` to `.profile`
+* Add `PATH="$PATH:$HOME/coinevo/build/release/bin"` to `.profile`
 
-* Run Monero with `monerod --detach`
+* Run Coinevo with `coinevod --detach`
 
 * **Optional**: build and run the test suite to verify the binaries:
 
@@ -297,7 +297,7 @@ Tested on a Raspberry Pi Zero with a clean install of minimal Raspbian Stretch (
 
 * `apt-get update && apt-get upgrade` to install all of the latest software
 
-* Install the dependencies for Monero from the 'Debian' column in the table above.
+* Install the dependencies for Coinevo from the 'Debian' column in the table above.
 
 * Increase the system swap size:
 
@@ -310,11 +310,11 @@ Tested on a Raspberry Pi Zero with a clean install of minimal Raspbian Stretch (
 
 * If using an external hard disk without an external power supply, ensure it gets enough power to avoid hardware issues when syncing, by adding the line "max_usb_current=1" to /boot/config.txt
 
-* Clone monero and checkout the most recent release version:
+* Clone coinevo and checkout the most recent release version:
 
     ```bash
-    git clone https://github.com/monero-project/monero.git
-    cd monero
+    git clone https://github.com/coinevo/coinevo.git
+    cd coinevo
     git checkout tags/v0.15.0.1
     ```
 
@@ -328,15 +328,15 @@ Tested on a Raspberry Pi Zero with a clean install of minimal Raspbian Stretch (
 
 * The resulting executables can be found in `build/release/bin`
 
-* Add `PATH="$PATH:$HOME/monero/build/release/bin"` to `.profile`
+* Add `PATH="$PATH:$HOME/coinevo/build/release/bin"` to `.profile`
 
-* Run Monero with `monerod --detach`
+* Run Coinevo with `coinevod --detach`
 
 * You may wish to reduce the size of the swap file after the build has finished, and delete the boost directory from your home directory
 
 #### *Note for Raspbian Jessie users:*
 
-If you are using the older Raspbian Jessie image, compiling Monero is a bit more complicated. The version of Boost available in the Debian Jessie repositories is too old to use with Monero, and thus you must compile a newer version yourself. The following explains the extra steps, and has been tested on a Raspberry Pi 2 with a clean install of minimal Raspbian Jessie.
+If you are using the older Raspbian Jessie image, compiling Coinevo is a bit more complicated. The version of Boost available in the Debian Jessie repositories is too old to use with Coinevo, and thus you must compile a newer version yourself. The following explains the extra steps, and has been tested on a Raspberry Pi 2 with a clean install of minimal Raspbian Jessie.
 
 * As before, `apt-get update && apt-get upgrade` to install all of the latest software, and increase the system swap size
 
@@ -348,7 +348,7 @@ If you are using the older Raspbian Jessie image, compiling Monero is a bit more
     ```
 
 
-* Then, install the dependencies for Monero except `libunwind` and `libboost-all-dev`
+* Then, install the dependencies for Coinevo except `libunwind` and `libboost-all-dev`
 
 * Install the latest version of boost (this may first require invoking `apt-get remove --purge libboost*` to remove a previous version if you're not using a clean install):
 
@@ -369,7 +369,7 @@ If you are using the older Raspbian Jessie image, compiling Monero is a bit more
 
 * Wait ~4 hours
 
-* From here, follow the [general Raspberry Pi instructions](#on-the-raspberry-pi) from the "Clone monero and checkout most recent release version" step.
+* From here, follow the [general Raspberry Pi instructions](#on-the-raspberry-pi) from the "Clone coinevo and checkout most recent release version" step.
 
 #### On Windows:
 
@@ -421,7 +421,7 @@ application.
 * To git clone, run:
 
     ```bash
-    git clone --recursive https://github.com/monero-project/monero.git
+    git clone --recursive https://github.com/coinevo/coinevo.git
     ```
 
 **Building**
@@ -429,10 +429,10 @@ application.
 * Change to the cloned directory, run:
 
     ```bash
-    cd monero
+    cd coinevo
     ```
 
-* If you would like a specific [version/tag](https://github.com/monero-project/monero/tags), do a git checkout for that version. eg. 'v0.15.0.1'. If you don't care about the version and just want binaries from master, skip this step:
+* If you would like a specific [version/tag](https://github.com/coinevo/coinevo/tags), do a git checkout for that version. eg. 'v0.15.0.1'. If you don't care about the version and just want binaries from master, skip this step:
 	
     ```bash
     git checkout v0.15.0.1
@@ -468,9 +468,9 @@ application.
 
 ### On FreeBSD:
 
-The project can be built from scratch by following instructions for Linux above(but use `gmake` instead of `make`). If you are running monero in a jail you need to add the flag: `allow.sysvipc=1` to your jail configuration, otherwise lmdb will throw the error message: `Failed to open lmdb environment: Function not implemented`.
+The project can be built from scratch by following instructions for Linux above(but use `gmake` instead of `make`). If you are running coinevo in a jail you need to add the flag: `allow.sysvipc=1` to your jail configuration, otherwise lmdb will throw the error message: `Failed to open lmdb environment: Function not implemented`.
 
-We expect to add Monero into the ports tree in the near future, which will aid in managing installations using ports or packages.
+We expect to add Coinevo into the ports tree in the near future, which will aid in managing installations using ports or packages.
 
 ### On OpenBSD:
 
@@ -479,9 +479,9 @@ You will need to add a few packages to your system. `pkg_add cmake gmake zeromq 
 The `doxygen` and `graphviz` packages are optional and require the xbase set.
 Running the test suite also requires `py-requests` package.
 
-Build monero: `env DEVELOPER_LOCAL_TOOLS=1 BOOST_ROOT=/usr/local gmake release-static`
+Build coinevo: `env DEVELOPER_LOCAL_TOOLS=1 BOOST_ROOT=/usr/local gmake release-static`
 
-Note: you may encounter the following error, when compiling the latest version of monero as a normal user:
+Note: you may encounter the following error, when compiling the latest version of coinevo as a normal user:
 
 ```
 LLVM ERROR: out of memory
@@ -507,13 +507,13 @@ Then you can run make as usual.
 
 ```bash
 # Build image (for ARM 32-bit)
-docker build -f utils/build_scripts/android32.Dockerfile -t monero-android .
+docker build -f utils/build_scripts/android32.Dockerfile -t coinevo-android .
 # Build image (for ARM 64-bit)
-docker build -f utils/build_scripts/android64.Dockerfile -t monero-android .
+docker build -f utils/build_scripts/android64.Dockerfile -t coinevo-android .
 # Create container
-docker create -it --name monero-android monero-android bash
+docker create -it --name coinevo-android coinevo-android bash
 # Get binaries
-docker cp monero-android:/src/build/release/bin .
+docker cp coinevo-android:/src/build/release/bin .
 ```
 
 ### Building portable statically linked binaries
@@ -550,11 +550,11 @@ You can also cross-compile static binaries on Linux for Windows and macOS with t
 
 The required packages are the names for each toolchain on apt. Depending on your distro, they may have different names.
 
-Using `depends` might also be easier to compile Monero on Windows than using MSYS. Activate Windows Subsystem for Linux (WSL) with a distro (for example Ubuntu), install the apt build-essentials and follow the `depends` steps as depicted above.
+Using `depends` might also be easier to compile Coinevo on Windows than using MSYS. Activate Windows Subsystem for Linux (WSL) with a distro (for example Ubuntu), install the apt build-essentials and follow the `depends` steps as depicted above.
 
 The produced binaries still link libc dynamically. If the binary is compiled on a current distribution, it might not run on an older distribution with an older installation of libc. Passing `-DBACKCOMPAT=ON` to cmake will make sure that the binary will run on systems having at least libc version 2.17.
 
-## Installing Monero from a package
+## Installing Coinevo from a package
 
 **DISCLAIMER: These packages are not part of this repository or maintained by this project's contributors, and as such, do not go through the same review process to ensure their trustworthiness and security.**
 
@@ -563,40 +563,40 @@ Packages are available for
 * Debian Bullseye and Sid
 
     ```bash
-    sudo apt install monero
+    sudo apt install coinevo
     ```
-More info and versions in the [Debian package tracker](https://tracker.debian.org/pkg/monero).
+More info and versions in the [Debian package tracker](https://tracker.debian.org/pkg/coinevo).
 
 * Arch Linux (via [AUR](https://aur.archlinux.org/)):
-  - Stable release: [`monero`](https://aur.archlinux.org/packages/monero)
-  - Bleeding edge: [`monero-git`](https://aur.archlinux.org/packages/monero-git)
+  - Stable release: [`coinevo`](https://aur.archlinux.org/packages/coinevo)
+  - Bleeding edge: [`coinevo-git`](https://aur.archlinux.org/packages/coinevo-git)
 
 * Void Linux:
 
     ```bash
-    xbps-install -S monero
+    xbps-install -S coinevo
     ```
 
 * GuixSD
 
     ```bash
-    guix package -i monero
+    guix package -i coinevo
     ```
 
 * Docker
 
     ```bash
     # Build using all available cores
-    docker build -t monero .
+    docker build -t coinevo .
     
     # or build using a specific number of cores (reduce RAM requirement)
-    docker build --build-arg NPROC=1 -t monero .
+    docker build --build-arg NPROC=1 -t coinevo .
     
     # either run in foreground
-    docker run -it -v /monero/chain:/root/.bitmonero -v /monero/wallet:/wallet -p 18080:18080 monero
+    docker run -it -v /coinevo/chain:/root/.coinevo -v /coinevo/wallet:/wallet -p 18080:18080 coinevo
     
     # or in background
-    docker run -it -d -v /monero/chain:/root/.bitmonero -v /monero/wallet:/wallet -p 18080:18080 monero
+    docker run -it -d -v /coinevo/chain:/root/.coinevo -v /coinevo/wallet:/wallet -p 18080:18080 coinevo
     ```
 
 * The build needs 3 GB space.
@@ -604,17 +604,17 @@ More info and versions in the [Debian package tracker](https://tracker.debian.or
 
 Packaging for your favorite distribution would be a welcome contribution!
 
-## Running monerod
+## Running coinevod
 
 The build places the binary in `bin/` sub-directory within the build directory
 from which cmake was invoked (repository root by default). To run in
 foreground:
 
 ```bash
-./bin/monerod
+./bin/coinevod
 ```
 
-To list all available options, run `./bin/monerod --help`.  Options can be
+To list all available options, run `./bin/coinevod --help`.  Options can be
 specified either on the command line or in a configuration file passed by the
 `--config-file` argument.  To specify an option in the configuration file, add
 a line with the syntax `argumentname=value`, where `argumentname` is the name
@@ -623,18 +623,18 @@ of the argument without the leading dashes, for example `log-level=1`.
 To run in background:
 
 ```bash
-./bin/monerod --log-file monerod.log --detach
+./bin/coinevod --log-file coinevod.log --detach
 ```
 
 To run as a systemd service, copy
-[monerod.service](utils/systemd/monerod.service) to `/etc/systemd/system/` and
-[monerod.conf](utils/conf/monerod.conf) to `/etc/`. The [example
-service](utils/systemd/monerod.service) assumes that the user `monero` exists
+[coinevod.service](utils/systemd/coinevod.service) to `/etc/systemd/system/` and
+[coinevod.conf](utils/conf/coinevod.conf) to `/etc/`. The [example
+service](utils/systemd/coinevod.service) assumes that the user `coinevo` exists
 and its home is the data directory specified in the [example
-config](utils/conf/monerod.conf).
+config](utils/conf/coinevod.conf).
 
 If you're on Mac, you may need to add the `--max-concurrency 1` option to
-monero-wallet-cli, and possibly monerod, if you get crashes refreshing.
+coinevo-wallet-cli, and possibly coinevod, if you get crashes refreshing.
 
 ## Internationalization
 
@@ -648,32 +648,32 @@ See [README.i18n.md](README.i18n.md).
 > used solely for relaying transactions received over local RPC. This provides
 > privacy and better protection against surrounding node (sybil) attacks.
 
-While Monero isn't made to integrate with Tor, it can be used wrapped with torsocks, by
+While Coinevo isn't made to integrate with Tor, it can be used wrapped with torsocks, by
 setting the following configuration parameters and environment variables:
 
 * `--p2p-bind-ip 127.0.0.1` on the command line or `p2p-bind-ip=127.0.0.1` in
-  monerod.conf to disable listening for connections on external interfaces.
-* `--no-igd` on the command line or `no-igd=1` in monerod.conf to disable IGD
+  coinevod.conf to disable listening for connections on external interfaces.
+* `--no-igd` on the command line or `no-igd=1` in coinevod.conf to disable IGD
   (UPnP port forwarding negotiation), which is pointless with Tor.
 * `DNS_PUBLIC=tcp` or `DNS_PUBLIC=tcp://x.x.x.x` where x.x.x.x is the IP of the
   desired DNS server, for DNS requests to go over TCP, so that they are routed
-  through Tor. When IP is not specified, monerod uses the default list of
+  through Tor. When IP is not specified, coinevod uses the default list of
   servers defined in [src/common/dns_utils.cpp](src/common/dns_utils.cpp).
-* `TORSOCKS_ALLOW_INBOUND=1` to tell torsocks to allow monerod to bind to interfaces
+* `TORSOCKS_ALLOW_INBOUND=1` to tell torsocks to allow coinevod to bind to interfaces
    to accept connections from the wallet. On some Linux systems, torsocks
    allows binding to localhost by default, so setting this variable is only
    necessary to allow binding to local LAN/VPN interfaces to allow wallets to
    connect from remote hosts. On other systems, it may be needed for local wallets
    as well.
 * Do NOT pass `--detach` when running through torsocks with systemd, (see
-  [utils/systemd/monerod.service](utils/systemd/monerod.service) for details).
+  [utils/systemd/coinevod.service](utils/systemd/coinevod.service) for details).
 * If you use the wallet with a Tor daemon via the loopback IP (eg, 127.0.0.1:9050),
   then use `--untrusted-daemon` unless it is your own hidden service.
 
-Example command line to start monerod through Tor:
+Example command line to start coinevod through Tor:
 
 ```bash
-DNS_PUBLIC=tcp torsocks monerod --p2p-bind-ip 127.0.0.1 --no-igd
+DNS_PUBLIC=tcp torsocks coinevod --p2p-bind-ip 127.0.0.1 --no-igd
 ```
 
 ### Using Tor on Tails
@@ -684,13 +684,13 @@ allow inbound connections. Full example:
 
 ```bash
 sudo iptables -I OUTPUT 2 -p tcp -d 127.0.0.1 -m tcp --dport 18081 -j ACCEPT
-DNS_PUBLIC=tcp torsocks ./monerod --p2p-bind-ip 127.0.0.1 --no-igd --rpc-bind-ip 127.0.0.1 \
+DNS_PUBLIC=tcp torsocks ./coinevod --p2p-bind-ip 127.0.0.1 --no-igd --rpc-bind-ip 127.0.0.1 \
     --data-dir /home/amnesia/Persistent/your/directory/to/the/blockchain
 ```
 
 ## Debugging
 
-This section contains general instructions for debugging failed installs or problems encountered with Monero. First, ensure you are running the latest version built from the Github repo.
+This section contains general instructions for debugging failed installs or problems encountered with Coinevo. First, ensure you are running the latest version built from the Github repo.
 
 ### Obtaining stack traces and core dumps on Unix systems
 
@@ -703,7 +703,7 @@ Run the build.
 Once it stalls, enter the following command:
 
 ```bash
-gdb /path/to/monerod `pidof monerod`
+gdb /path/to/coinevod `pidof coinevod`
 ```
 
 Type `thread apply all bt` within gdb in order to obtain the stack trace
@@ -716,12 +716,12 @@ Enter `echo core | sudo tee /proc/sys/kernel/core_pattern` to stop cores from be
 
 Run the build.
 
-When it terminates with an output along the lines of "Segmentation fault (core dumped)", there should be a core dump file in the same directory as monerod. It may be named just `core`, or `core.xxxx` with numbers appended.
+When it terminates with an output along the lines of "Segmentation fault (core dumped)", there should be a core dump file in the same directory as coinevod. It may be named just `core`, or `core.xxxx` with numbers appended.
 
 You can now analyse this core dump with `gdb` as follows:
 
 ```bash
-gdb /path/to/monerod /path/to/dumpfile`
+gdb /path/to/coinevod /path/to/dumpfile`
 ```
 
 Print the stack trace with `bt`
@@ -732,13 +732,13 @@ Print the stack trace with `bt`
 coredumpctl -1 gdb
 ```
 
-#### To run monero within gdb:
+#### To run coinevo within gdb:
 
-Type `gdb /path/to/monerod`
+Type `gdb /path/to/coinevod`
 
 Pass command-line options with `--args` followed by the relevant arguments
 
-Type `run` to run monerod
+Type `run` to run coinevod
 
 ### Analysing memory corruption
 
@@ -746,17 +746,17 @@ There are two tools available:
 
 #### ASAN
 
-Configure Monero with the -D SANITIZE=ON cmake flag, eg:
+Configure Coinevo with the -D SANITIZE=ON cmake flag, eg:
 
 ```bash
 cd build/debug && cmake -D SANITIZE=ON -D CMAKE_BUILD_TYPE=Debug ../..
 ```
 
-You can then run the monero tools normally. Performance will typically halve.
+You can then run the coinevo tools normally. Performance will typically halve.
 
 #### valgrind
 
-Install valgrind and run as `valgrind /path/to/monerod`. It will be very slow.
+Install valgrind and run as `valgrind /path/to/coinevod`. It will be very slow.
 
 ### LMDB
 
@@ -765,7 +765,7 @@ Instructions for debugging suspected blockchain corruption as per @HYC
 There is an `mdb_stat` command in the LMDB source that can print statistics about the database but it's not routinely built. This can be built with the following command:
 
 ```bash
-cd ~/monero/external/db_drivers/liblmdb && make
+cd ~/coinevo/external/db_drivers/liblmdb && make
 ```
 
 The output of `mdb_stat -ea <path to blockchain dir>` will indicate inconsistencies in the blocks, block_heights and block_info table.
@@ -780,13 +780,13 @@ These records are dumped as hex data, where the first line is the key and the se
 
 ### Socket-based
 
-Because of the nature of the socket-based protocols that drive monero, certain protocol weaknesses are somewhat unavoidable at this time. While these weaknesses can theoretically be fully mitigated, the effort required (the means) may not justify the ends. As such, please consider taking the following precautions if you are a monero node operator:
+Because of the nature of the socket-based protocols that drive coinevo, certain protocol weaknesses are somewhat unavoidable at this time. While these weaknesses can theoretically be fully mitigated, the effort required (the means) may not justify the ends. As such, please consider taking the following precautions if you are a coinevo node operator:
 
-- Run `monerod` on a "secured" machine. If operational security is not your forte, at a very minimum, have a dedicated a computer running `monerod` and **do not** browse the web, use email clients, or use any other potentially harmful apps on your `monerod` machine. **Do not click links or load URL/MUA content on the same machine**. Doing so may potentially exploit weaknesses in commands which accept "localhost" and "127.0.0.1".
-- If you plan on hosting a public "remote" node, start `monerod` with `--restricted-rpc`. This is a must.
+- Run `coinevod` on a "secured" machine. If operational security is not your forte, at a very minimum, have a dedicated a computer running `coinevod` and **do not** browse the web, use email clients, or use any other potentially harmful apps on your `coinevod` machine. **Do not click links or load URL/MUA content on the same machine**. Doing so may potentially exploit weaknesses in commands which accept "localhost" and "127.0.0.1".
+- If you plan on hosting a public "remote" node, start `coinevod` with `--restricted-rpc`. This is a must.
 
 ### Blockchain-based
 
 Certain blockchain "features" can be considered "bugs" if misused correctly. Consequently, please consider the following:
 
-- When receiving monero, be aware that it may be locked for an arbitrary time if the sender elected to, preventing you from spending that monero until the lock time expires. You may want to hold off acting upon such a transaction until the unlock time lapses. To get a sense of that time, you can consider the remaining blocktime until unlock as seen in the `show_transfers` command.
+- When receiving coinevo, be aware that it may be locked for an arbitrary time if the sender elected to, preventing you from spending that coinevo until the lock time expires. You may want to hold off acting upon such a transaction until the unlock time lapses. To get a sense of that time, you can consider the remaining blocktime until unlock as seen in the `show_transfers` command.

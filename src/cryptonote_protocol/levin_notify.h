@@ -1,4 +1,4 @@
-// Copyright (c) 2019, The Monero Project
+// Copyright (c) 2019, The Coinevo Project
 //
 // All rights reserved.
 //
@@ -112,7 +112,7 @@ namespace levin
         levin header. The message will be sent in a "discreet" manner if
         enabled - if `!noise.empty()` then the `command`/`payload` will be
         queued to send at the next available noise interval. Otherwise, a
-        standard Monero flood notification will be used.
+        standard Coinevo flood notification will be used.
 
         \note Eventually Dandelion++ stem sending will be used here when
           enabled.

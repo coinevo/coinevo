@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 // 
 // All rights reserved.
 // 
@@ -109,7 +109,7 @@ public:
    * @brief Gets a DNS address from OpenAlias format
    *
    * If the address looks good, but contains one @ symbol, replace that with a .
-   * e.g. donate@getmonero.org becomes donate.getmonero.org
+   * e.g. donate@coinevo.tech becomes donate.coinevo.tech
    *
    * @param oa_addr  OpenAlias address
    *

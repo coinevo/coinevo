@@ -1,6 +1,6 @@
-// Word list created by Monero contributor sammy007
+// Word list created by Coinevo contributor sammy007
 // 
-// Copyright (c) 2014-2019, The Monero Project
+// Copyright (c) 2014-2019, The Coinevo Project
 // 
 // All rights reserved.
 // 

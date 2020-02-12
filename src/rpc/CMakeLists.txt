@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2019, The Monero Project
+# Copyright (c) 2014-2019, The Coinevo Project
 #
 # All rights reserved.
 #
@@ -77,29 +77,29 @@ set(daemon_rpc_server_private_headers
   zmq_server.h)
 
 
-monero_private_headers(rpc
+coinevo_private_headers(rpc
   ${rpc_private_headers})
 
-monero_private_headers(daemon_rpc_server
+coinevo_private_headers(daemon_rpc_server
   ${daemon_rpc_server_private_headers})
 
 
-monero_add_library(rpc_base
+coinevo_add_library(rpc_base
   ${rpc_base_sources}
   ${rpc_base_headers}
   ${rpc_base_private_headers})
 
-monero_add_library(rpc
+coinevo_add_library(rpc
   ${rpc_sources}
   ${rpc_headers}
   ${rpc_private_headers})
 
-monero_add_library(daemon_messages
+coinevo_add_library(daemon_messages
   ${daemon_messages_sources}
   ${daemon_messages_headers}
   ${daemon_messages_private_headers})
 
-monero_add_library(daemon_rpc_server
+coinevo_add_library(daemon_rpc_server
   ${daemon_rpc_server_sources}
   ${daemon_rpc_server_headers}
   ${daemon_rpc_server_private_headers})

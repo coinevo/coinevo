@@ -34,17 +34,17 @@ try:
 except:
   tests = DEFAULT_TESTS
 
-N_MONERODS = 2
+N_COINEVODS = 2
 N_WALLETS = 4
 WALLET_DIRECTORY = builddir + "/functional-tests-directory"
 DIFFICULTY = 10
 
-monerod_base = [builddir + "/bin/monerod", "--regtest", "--fixed-difficulty", str(DIFFICULTY), "--offline", "--no-igd", "--p2p-bind-port", "monerod_p2p_port", "--rpc-bind-port", "monerod_rpc_port", "--zmq-rpc-bind-port", "monerod_zmq_port", "--non-interactive", "--disable-dns-checkpoints", "--check-updates", "disabled", "--rpc-ssl", "disabled", "--log-level", "1"]
-monerod_extra = [
+coinevod_base = [builddir + "/bin/coinevod", "--regtest", "--fixed-difficulty", str(DIFFICULTY), "--offline", "--no-igd", "--p2p-bind-port", "coinevod_p2p_port", "--rpc-bind-port", "coinevod_rpc_port", "--zmq-rpc-bind-port", "coinevod_zmq_port", "--non-interactive", "--disable-dns-checkpoints", "--check-updates", "disabled", "--rpc-ssl", "disabled", "--log-level", "1"]
+coinevod_extra = [
   [],
-  ["--rpc-payment-address", "44SKxxLQw929wRF6BA9paQ1EWFshNnKhXM3qz6Mo3JGDE2YG3xyzVutMStEicxbQGRfrYvAAYxH6Fe8rnD56EaNwUiqhcwR", "--rpc-payment-difficulty", str(DIFFICULTY), "--rpc-payment-credits", "5000", "--data-dir", builddir + "/functional-tests-directory/monerod1"],
+  ["--rpc-payment-address", "44SKxxLQw929wRF6BA9paQ1EWFshNnKhXM3qz6Mo3JGDE2YG3xyzVutMStEicxbQGRfrYvAAYxH6Fe8rnD56EaNwUiqhcwR", "--rpc-payment-difficulty", str(DIFFICULTY), "--rpc-payment-credits", "5000", "--data-dir", builddir + "/functional-tests-directory/coinevod1"],
 ]
-wallet_base = [builddir + "/bin/monero-wallet-rpc", "--wallet-dir", WALLET_DIRECTORY, "--rpc-bind-port", "wallet_port", "--disable-rpc-login", "--rpc-ssl", "disabled", "--daemon-ssl", "disabled", "--daemon-port", "18180", "--log-level", "1"]
+wallet_base = [builddir + "/bin/coinevo-wallet-rpc", "--wallet-dir", WALLET_DIRECTORY, "--rpc-bind-port", "wallet_port", "--disable-rpc-login", "--rpc-ssl", "disabled", "--daemon-ssl", "disabled", "--daemon-port", "18180", "--log-level", "1"]
 wallet_extra = [
 ]
 
@@ -53,11 +53,11 @@ processes = []
 outputs = []
 ports = []
 
-for i in range(N_MONERODS):
-  command_lines.append([str(18180+i) if x == "monerod_rpc_port" else str(18280+i) if x == "monerod_p2p_port" else str(18380+i) if x == "monerod_zmq_port" else x for x in monerod_base])
-  if i < len(monerod_extra):
-    command_lines[-1] += monerod_extra[i]
-  outputs.append(open(builddir + '/tests/functional_tests/monerod' + str(i) + '.log', 'a+'))
+for i in range(N_COINEVODS):
+  command_lines.append([str(18180+i) if x == "coinevod_rpc_port" else str(18280+i) if x == "coinevod_p2p_port" else str(18380+i) if x == "coinevod_zmq_port" else x for x in coinevod_base])
+  if i < len(coinevod_extra):
+    command_lines[-1] += coinevod_extra[i]
+  outputs.append(open(builddir + '/tests/functional_tests/coinevod' + str(i) + '.log', 'a+'))
   ports.append(18180+i)
 
 for i in range(N_WALLETS):

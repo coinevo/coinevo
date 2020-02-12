@@ -1,4 +1,4 @@
-// Copyright (c) 2019, The Monero Project
+// Copyright (c) 2019, The Coinevo Project
 //
 // All rights reserved.
 //
@@ -175,7 +175,7 @@ namespace zmq
     expect<std::string> receive(void* const socket, const int flags)
     {
         std::string payload{};
-        MONERO_CHECK(retry_op(do_receive{}, payload, socket, flags));
+        COINEVO_CHECK(retry_op(do_receive{}, payload, socket, flags));
         return {std::move(payload)};
     }
 
