@@ -171,7 +171,7 @@ namespace cryptonote
       case MAINNET:
 #if !defined(EVO_ENABLE_INTEGRATION_TEST_HOOKS)
         ADD_CHECKPOINT(0,      "c106ebad646e2dc0f9ab96741b2c320d3435b43d6f6f9660b1f318f33a764ad2");
-        ADD_CHECKPOINT(5,      "786a14dc9ba1d9d70e1dca717f17d160a49180eeefcb85d02815da827f076052");
+/*        ADD_CHECKPOINT(5,      "786a14dc9ba1d9d70e1dca717f17d160a49180eeefcb85d02815da827f076052");
         ADD_CHECKPOINT(10,     "972e4fad4c5fee4cecb86f86f0b91fdd432da513c5dc5e74ab2fe943c5cbfb23");
         ADD_CHECKPOINT(15,     "b221735a4db5a3ed99b8b972125763dfaa56b63cb34b59fdc067ec6056845ade");
         ADD_CHECKPOINT(20,     "08ffcca87bb07b74158763fa8ee42a7c751d41d273a94b10d093f813d238673a");
@@ -191,7 +191,7 @@ namespace cryptonote
         ADD_CHECKPOINT(295,    "aa995e2cbcdf49046e834edd47c9499ff1c57c98dbc57e72ca533efb4224bbc4");
         ADD_CHECKPOINT(300,    "64618f1f3dc415a105f8080086a5904da13690429fcf17e2da5d1fefdf4e89f2");
         ADD_CHECKPOINT(303,    "429041f2f4cae95b2bb55bdaf12dd5e8ce9e051fbbdd316795566fb5a7c8c8cf");
-
+*/
 
 #endif
         break;
