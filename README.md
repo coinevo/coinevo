@@ -8,10 +8,6 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
   - [Development resources](#development-resources)
   - [Vulnerability response](#vulnerability-response)
   - [Research](#research)
-  - [Announcements](#announcements)
-  - [Translations](#translations)
-  - [Build Status](#build-status)
-    - [IMPORTANT](#important)
   - [Coverage](#coverage)
   - [Introduction](#introduction)
   - [About this project](#about-this-project)
@@ -39,45 +35,6 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
 - Our [Vulnerability Response Process](https://github.com/coinevo/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md) encourages responsible disclosure
 - We are also available via [HackerOne](https://hackerone.com/coinevo)
-
-## Research
-
-The [Coinevo Research Lab](https://src.coinevo.tech/resources/research-lab/) is an open forum where the community coordinates research into Coinevo cryptography, protocols, fungibility, analysis, and more. We welcome collaboration and contributions from outside researchers! Because not all Lab work and publications are distributed as traditional preprints or articles, they may be easy to miss if you are conducting literature reviews for your own Coinevo research. You are encouraged to get in touch with our researchers if you have questions, wish to collaborate, or would like guidance to help avoid unnecessarily duplicating earlier or known work.
-
-Our researchers are available on IRC in [#coinevo-research-lab on Freenode](https://webchat.freenode.net/?randomnick=1&channels=%23coinevo-research-lab&prompt=1&uio=d4) or by email:
-
-- Sarang Noether, Ph.D.: [sarang@coinevo.tech](mailto:sarang@coinevo.tech) or [sarang.noether@protonmail.com](mailto:sarang.noether@protonmail.com); [research repository](https://github.com/SarangNoether/research-lab)
-- Surae Noether (Brandon Goodell), Ph.D.: [surae@coinevo.tech](mailto:surae@coinevo.tech) or [surae.noether@protonmail.com](mailto:surae.noether@protonmail.com); [research repository](https://github.com/b-g-goodell/research-lab)
-
-## Announcements
-
-- You can subscribe to an [announcement listserv](https://lists.coinevo.tech) to get critical announcements from the Coinevo core team. The announcement list can be very helpful for knowing when software updates are needed.
-
-## Translations
-The CLI wallet is available in different languages. If you want to help translate it, see our self-hosted localization platform, Weblate, on [translate.coinevo.tech](https://translate.coinevo.tech/projects/CLI/). Every translation *must* be uploaded on the platform, pull requests directly editing the code in this repository will be closed. If you need help with Weblate, you can find a guide with screenshots [here](https://github.com/coinevo-ecosystem/coinevo-translations/blob/master/weblate.md).
-&nbsp;
-
-If you need help/support/info about translations, contact the localization workgroup. You can find the complete list of contacts on the repository of the workgroup: [coinevo-translations](https://github.com/coinevo-ecosystem/coinevo-translations#contacts).
-
-## Build Status
-
-### IMPORTANT
-
-These builds are of the master branch, which is used for active development and can be either unstable or incompatible with release software. Please compile release branches.
-
-| Operating System      | Processor | Status |
-| --------------------- | -------- |--------|
-| Ubuntu 16.04          |  i686    | [![Ubuntu 16.04 i686](https://build.coinevo.tech/png?builder=coinevo-static-ubuntu-i686)](https://build.coinevo.tech/builders/coinevo-static-ubuntu-i686)
-| Ubuntu 16.04          |  amd64   | [![Ubuntu 16.04 amd64](https://build.coinevo.tech/png?builder=coinevo-static-ubuntu-amd64)](https://build.coinevo.tech/builders/coinevo-static-ubuntu-amd64)
-| Ubuntu 16.04          |  armv7   | [![Ubuntu 16.04 armv7](https://build.coinevo.tech/png?builder=coinevo-static-ubuntu-arm7)](https://build.coinevo.tech/builders/coinevo-static-ubuntu-arm7)
-| Debian Stable         |  armv8   | [![Debian armv8](https://build.coinevo.tech/png?builder=coinevo-static-debian-armv8)](https://build.coinevo.tech/builders/coinevo-static-debian-armv8)
-| macOS 10.11             |  amd64   | [![macOS 10.11 amd64](https://build.coinevo.tech/png?builder=coinevo-static-osx-10.11)](https://build.coinevo.tech/builders/coinevo-static-osx-10.11)
-| macOS 10.12             |  amd64   | [![macOS 10.12 amd64](https://build.coinevo.tech/png?builder=coinevo-static-osx-10.12)](https://build.coinevo.tech/builders/coinevo-static-osx-10.12)
-| macOS 10.13             |  amd64   | [![macOS 10.13 amd64](https://build.coinevo.tech/png?builder=coinevo-static-osx-10.13)](https://build.coinevo.tech/builders/coinevo-static-osx-10.13)
-| FreeBSD 11            |  amd64   | [![FreeBSD 11 amd64](https://build.coinevo.tech/png?builder=coinevo-static-freebsd64)](https://build.coinevo.tech/builders/coinevo-static-freebsd64)
-| DragonFly BSD 4.6     |  amd64   | [![DragonFly BSD amd64](https://build.coinevo.tech/png?builder=coinevo-static-dragonflybsd-amd64)](https://build.coinevo.tech/builders/coinevo-static-dragonflybsd-amd64)
-| Windows (MSYS2/MinGW) |  i686    | [![Windows (MSYS2/MinGW) i686](https://build.coinevo.tech/png?builder=coinevo-static-win32)](https://build.coinevo.tech/builders/coinevo-static-win32)
-| Windows (MSYS2/MinGW) |  amd64   | [![Windows (MSYS2/MinGW) amd64](https://build.coinevo.tech/png?builder=coinevo-static-win64)](https://build.coinevo.tech/builders/coinevo-static-win64)
 
 ## Coverage
 
@@ -111,22 +68,6 @@ As with many development projects, the repository on Github is considered to be 
 
 Coinevo is a 100% community-sponsored endeavor. If you want to join our efforts, the easiest thing you can do is support the project financially. Both Coinevo and Bitcoin donations can be made to **donate.coinevo.tech** if using a client that supports the [OpenAlias](https://openalias.org) standard. Alternatively you can send EVO to the Coinevo donation address via the `donate` command (type `help` in the command-line wallet for details).
 
-The Coinevo donation address is: `44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A` (viewkey: `f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501`)
-
-The Bitcoin donation address is: `1KTexdemPdxSBcG55heUuTjDRYqbC5ZL8H`
-
-Core development funding and/or some supporting services are also graciously provided by sponsors:
-
-[<img width="80" src="https://static.coinevo.tech/images/sponsors/mycoinevo.png"/>](https://mycoinevo.com)
-[<img width="150" src="https://static.coinevo.tech/images/sponsors/kitware.png?1"/>](https://kitware.com)
-[<img width="100" src="https://static.coinevo.tech/images/sponsors/dome9.png"/>](https://dome9.com)
-[<img width="150" src="https://static.coinevo.tech/images/sponsors/araxis.png"/>](https://araxis.com)
-[<img width="150" src="https://static.coinevo.tech/images/sponsors/jetbrains.png"/>](https://www.jetbrains.com/)
-[<img width="150" src="https://static.coinevo.tech/images/sponsors/navicat.png"/>](https://www.navicat.com/)
-[<img width="150" src="https://static.coinevo.tech/images/sponsors/symas.png"/>](https://www.symas.com/)
-
-There are also several mining pools that kindly donate a portion of their fees, [a list of them can be found on our Bitcointalk post](https://bitcointalk.org/index.php?topic=583449.0).
-
 ## License
 
 See [LICENSE](LICENSE).
@@ -134,34 +75,6 @@ See [LICENSE](LICENSE).
 ## Contributing
 
 If you want to help out, see [CONTRIBUTING](CONTRIBUTING.md) for a set of guidelines.
-
-## Scheduled software upgrades
-
-Coinevo uses a fixed-schedule software upgrade (hard fork) mechanism to implement new features. This means that users of Coinevo (end users and service providers) should run current versions and upgrade their software on a regular schedule. Software upgrades occur during the months of April and October. The required software for these upgrades will be available prior to the scheduled date. Please check the repository prior to this date for the proper Coinevo software version. Below is the historical schedule and the projected schedule for the next upgrade.
-Dates are provided in the format YYYY-MM-DD.
-
-
-| Software upgrade block height  | Date       | Fork version      | Minimum Coinevo version | Recommended Coinevo version | Details                                                                            |  
-| ------------------------------ | -----------| ----------------- | ---------------------- | -------------------------- | ---------------------------------------------------------------------------------- |
-| 1009827                        | 2016-03-22 | v2                | v0.9.4                 | v0.9.4                     | Allow only >= ringsize 3, blocktime = 120 seconds, fee-free blocksize 60 kb       |
-| 1141317                        | 2016-09-21 | v3                | v0.9.4                 | v0.10.0                    | Splits coinbase into denominations  |
-| 1220516                        | 2017-01-05 | v4                | v0.10.1                | v0.10.2.1                  | Allow normal and RingCT transactions |
-| 1288616                        | 2017-04-15 | v5                | v0.10.3.0              | v0.10.3.1                  | Adjusted minimum blocksize and fee algorithm      |
-| 1400000                        | 2017-09-16 | v6                | v0.11.0.0              | v0.11.0.0                  | Allow only RingCT transactions, allow only >= ringsize 5      |
-| 1546000                        | 2018-04-06 | v7                | v0.12.0.0              | v0.12.3.0                  | Cryptonight variant 1, ringsize >= 7, sorted inputs
-| 1685555                        | 2018-10-18 | v8                | v0.13.0.0              | v0.13.0.4                  | max transaction size at half the penalty free block size, bulletproofs enabled, cryptonight variant 2, fixed ringsize [11](https://youtu.be/KOO5S4vxi0o)
-| 1686275                        | 2018-10-19 | v9                | v0.13.0.0              | v0.13.0.4                  | bulletproofs required
-| 1788000                        | 2019-03-09 | v10               | v0.14.0.0              | v0.14.1.2                  | New PoW based on Cryptonight-R, new block weight algorithm, slightly more efficient RingCT format
-| 1788720                        | 2019-03-10 | v11               | v0.14.0.0              | v0.14.1.2                  | forbid old RingCT transaction format
-| 1978433                        | 2019-11-30* | v12                | v0.15.0.0              | v0.15.0.1                  | New PoW based on RandomX, only allow >= 2 outputs, change to the block median used to calculate penalty, v1 coinbases are forbidden, rct sigs in coinbase forbidden, 10 block lock time for incoming transactions
-| XXXXXXX                        | XXX-XX-XX | XXX                | vX.XX.X.X              | vX.XX.X.X                  | XXX |
-
-X's indicate that these details have not been determined as of commit date.
-* indicates estimate as of commit date
-
-## Release staging schedule and protocol
-
-Approximately three months prior to a scheduled software upgrade, a branch from master will be created with the new release version tag. Pull requests that address bugs should then be made to both master and the new release branch. Pull requests that require extensive review and testing (generally, optimizations and new features) should *not* be made to the release branch.
 
 ## Compiling Coinevo from source
 
