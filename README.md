@@ -152,7 +152,7 @@ invokes cmake commands as needed.
 
     ```bash
     cd coinevo
-    git checkout release-v0.15
+    git checkout release-v1.0.1
     make
     ```
 
@@ -228,7 +228,7 @@ Tested on a Raspberry Pi Zero with a clean install of minimal Raspbian Stretch (
     ```bash
     git clone https://github.com/coinevo/coinevo.git
     cd coinevo
-    git checkout tags/v0.15.0.1
+    git checkout tags/v1.0.1
     ```
 
 * Build:
@@ -345,10 +345,10 @@ application.
     cd coinevo
     ```
 
-* If you would like a specific [version/tag](https://github.com/coinevo/coinevo/tags), do a git checkout for that version. eg. 'v0.15.0.1'. If you don't care about the version and just want binaries from master, skip this step:
+* If you would like a specific [version/tag](https://github.com/coinevo/coinevo/tags), do a git checkout for that version. eg. 'v1.0.1'. If you don't care about the version and just want binaries from master, skip this step:
 	
     ```bash
-    git checkout v0.15.0.1
+    git checkout v1.0.1
     ```
 
 * If you are on a 64-bit system, run:
