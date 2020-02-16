@@ -7,7 +7,6 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
   - [Development resources](#development-resources)
   - [Vulnerability response](#vulnerability-response)
-  - [Research](#research)
   - [Coverage](#coverage)
   - [Introduction](#introduction)
   - [About this project](#about-this-project)
