@@ -506,10 +506,10 @@ More info and versions in the [Debian package tracker](https://tracker.debian.or
     docker build --build-arg NPROC=1 -t coinevo .
     
     # either run in foreground
-    docker run -it -v /coinevo/chain:/root/.coinevo -v /coinevo/wallet:/wallet -p 18080:18080 coinevo
+    docker run -it -v /coinevo/chain:/root/.coinevo -v /coinevo/wallet:/wallet -p 33330:33330 coinevo
     
     # or in background
-    docker run -it -d -v /coinevo/chain:/root/.coinevo -v /coinevo/wallet:/wallet -p 18080:18080 coinevo
+    docker run -it -d -v /coinevo/chain:/root/.coinevo -v /coinevo/wallet:/wallet -p 33330:33330 coinevo
     ```
 
 * The build needs 3 GB space.
@@ -596,7 +596,7 @@ to add a rule to allow this connection too, in addition to telling torsocks to
 allow inbound connections. Full example:
 
 ```bash
-sudo iptables -I OUTPUT 2 -p tcp -d 127.0.0.1 -m tcp --dport 18081 -j ACCEPT
+sudo iptables -I OUTPUT 2 -p tcp -d 127.0.0.1 -m tcp --dport 33331 -j ACCEPT
 DNS_PUBLIC=tcp torsocks ./coinevod --p2p-bind-ip 127.0.0.1 --no-igd --rpc-bind-ip 127.0.0.1 \
     --data-dir /home/amnesia/Persistent/your/directory/to/the/blockchain
 ```
