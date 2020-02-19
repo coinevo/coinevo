@@ -202,11 +202,11 @@ VOLUME /home/coinevo/.coinevo
 # coinevo-wallet-cli
 VOLUME /wallet
 
-EXPOSE 18080
-EXPOSE 18081
+EXPOSE 33330
+EXPOSE 33331
 
 # switch to user coinevo
 USER coinevo
 
-ENTRYPOINT ["coinevod", "--p2p-bind-ip=0.0.0.0", "--p2p-bind-port=18080", "--rpc-bind-ip=0.0.0.0", "--rpc-bind-port=18081", "--non-interactive", "--confirm-external-bind"]
+ENTRYPOINT ["coinevod", "--p2p-bind-ip=0.0.0.0", "--p2p-bind-port=33330", "--rpc-bind-ip=0.0.0.0", "--rpc-bind-port=33331", "--non-interactive", "--confirm-external-bind"]
 
