@@ -5602,8 +5602,8 @@ WARNING: Do not reuse your Coinevo keys on another fork, UNLESS this fork has ke
     </message>
     <message>
         <location filename="../src/wallet/wallet2.cpp" line="255"/>
-        <source>Use daemon instance at port &lt;arg&gt; instead of 18081</source>
-        <translation>Använd daemonen på port &lt;arg&gt; istället för 18081</translation>
+        <source>Use daemon instance at port &lt;arg&gt; instead of 33331</source>
+        <translation>Använd daemonen på port &lt;arg&gt; istället för 33331</translation>
     </message>
     <message>
         <location filename="../src/wallet/wallet2.cpp" line="264"/>
