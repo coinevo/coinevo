@@ -26,15 +26,22 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 ## Development resources
 
 - Web: [coinevo.tech](https://coinevo.tech)
+- Pool: https://pool.coinevo.tech
+- Explorer: https://explorer.coinevo.tech
+- Web Wallet: https://wallet.coinevo.tech
 - Forum: [forum.coinevo.tech](https://forum.coinevo.tech)
 - Mail: [dev@coinevo.tech](mailto:dev@coinevo.tech)
 - GitHub: [https://github.com/coinevo/coinevo](https://github.com/coinevo/coinevo)
 - IRC: [#coinevo-dev on Freenode](https://webchat.freenode.net/?randomnick=1&channels=%23coinevo-dev&prompt=1&uio=d4)
 
-## Vulnerability response
+## Info
 
-- Our [Vulnerability Response Process](https://github.com/coinevo/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md) encourages responsible disclosure
-- We are also available via [HackerOne](https://hackerone.com/coinevo)
+Coin: Coinevo
+Ticker: EVO
+Total Supply: 184million EVO
+p2pport: 33330
+RPC Port: 33331
+
 
 ## Coverage
 
