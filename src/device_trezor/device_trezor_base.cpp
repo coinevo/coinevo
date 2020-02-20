@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2019, The Coinevo Project
+// Copyright (c) 2017-2019, The Monero Project
 //
 // All rights reserved.
 //

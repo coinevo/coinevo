@@ -2,7 +2,7 @@
 /// @author rfree (current maintainer in coinevo.cc project)
 /// @brief interface for throttling of connection (count and rate-limit speed etc)
 
-// Copyright (c) 2014-2019, The Coinevo Project
+// Copyright (c) 2014-2019, The Monero Project
 // 
 // All rights reserved.
 // 

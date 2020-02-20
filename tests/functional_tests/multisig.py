@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright (c) 2019 The Coinevo Project
+# Copyright (c) 2019 The Monero Project
 # 
 # All rights reserved.
 # 
