@@ -43,7 +43,7 @@ packages:
 - "libprotobuf-dev"
 - "python3-zmq"
 remotes:
-- "url": "https://github.com/coinevo/coinevo.git"
+- "url": "https://github.com/coinevo-project/coinevo.git"
   "dir": "coinevo"
 files: []
 script: |

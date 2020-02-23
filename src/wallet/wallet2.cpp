@@ -140,7 +140,7 @@ using namespace cryptonote;
 #define DEFAULT_MIN_OUTPUT_COUNT 5
 #define DEFAULT_MIN_OUTPUT_VALUE (2*COIN)
 
-#define DEFAULT_INACTIVITY_LOCK_TIMEOUT 450 // a minute and a half
+#define DEFAULT_INACTIVITY_LOCK_TIMEOUT 90 // a minute and a half
 
 #define IGNORE_LONG_PAYMENT_ID_FROM_BLOCK_VERSION 12
 
@@ -874,10 +874,9 @@ uint64_t estimate_tx_weight(bool use_rct, int n_inputs, int mixin, int n_outputs
   return size;
 }
 
-
 uint8_t get_bulletproof_fork()
 {
-  return 11;
+  return 8;
 }
 
 uint64_t estimate_fee(bool use_per_byte_fee, bool use_rct, int n_inputs, int mixin, int n_outputs, size_t extra_size, bool bulletproof, uint64_t base_fee, uint64_t fee_multiplier, uint64_t fee_quantization_mask)
@@ -7194,7 +7193,6 @@ uint64_t wallet2::get_min_ring_size()
 //------------------------------------------------------------------------------------------------------------------------------
 uint64_t wallet2::get_max_ring_size()
 {
-
   if (use_fork_rules(8, 10))
     return 11;
   return 0;
@@ -13309,6 +13307,10 @@ uint64_t wallet2::get_segregation_fork_height() const
   {
     // All four CoinevoPulse domains have DNSSEC on and valid
     static const std::vector<std::string> dns_urls = {
+        "segheights.coinevopulse.org",
+        "segheights.coinevopulse.net",
+        "segheights.coinevopulse.co",
+        "segheights.coinevopulse.se"
     };
 
     const uint64_t current_height = get_blockchain_current_height();

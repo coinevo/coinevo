@@ -24,7 +24,7 @@ packages:
 - "python-dev"
 - "python-setuptools"
 remotes:
-- "url": "https://github.com/coinevo/coinevo.git"
+- "url": "https://github.com/coinevo-project/coinevo.git"
   "dir": "coinevo"
 files:
 - "MacOSX10.11.sdk.tar.gz"

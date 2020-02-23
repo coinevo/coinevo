@@ -981,16 +981,16 @@ namespace cryptonote
       decimal_point = default_decimal_point;
     switch (decimal_point)
     {
-      case 12:
+      case 11:
         return "coinevo";
       case 9:
-        return "millievo";
+        return "millinero";
       case 6:
-        return "microevo";
+        return "micronero";
       case 3:
-        return "nanoevo";
+        return "nanonero";
       case 0:
-        return "picoevo";
+        return "piconero";
       default:
         ASSERT_MES_AND_THROW("Invalid decimal point specification: " << decimal_point);
     }

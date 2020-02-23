@@ -160,11 +160,11 @@ static void rx_initdata(randomx_cache *rs_cache, const int miners, const uint64_
     CTHR_THREAD_TYPE *st;
     si = malloc(miners * sizeof(seedinfo));
     if (si == NULL)
-      local_abort("Couldn't allocate RandomEVO mining threadinfo");
+      local_abort("Couldn't allocate RandomX mining threadinfo");
     st = malloc(miners * sizeof(CTHR_THREAD_TYPE));
     if (st == NULL) {
       free(si);
-      local_abort("Couldn't allocate RandomEVO mining threadlist");
+      local_abort("Couldn't allocate RandomX mining threadlist");
     }
     for (i=0; i<miners-1; i++) {
       si[i].si_cache = rs_cache;
@@ -228,7 +228,7 @@ void rx_slow_hash(const uint64_t mainheight, const uint64_t seedheight, const ch
         cache = randomx_alloc_cache(flags);
       }
       if (cache == NULL)
-        local_abort("Couldn't allocate RandomEVO cache");
+        local_abort("Couldn't allocate RandomX cache");
     }
   }
   if (rx_sp->rs_height != seedheight || rx_sp->rs_cache == NULL || memcmp(seedhash, rx_sp->rs_hash, HASH_SIZE)) {
@@ -259,7 +259,7 @@ void rx_slow_hash(const uint64_t mainheight, const uint64_t seedheight, const ch
         flags |= RANDOMX_FLAG_FULL_MEM;
       else {
         miners = 0;
-        mwarning(RX_LOGCAT, "Couldn't allocate RandomEVO dataset for miner");
+        mwarning(RX_LOGCAT, "Couldn't allocate RandomX dataset for miner");
       }
       CTHR_MUTEX_UNLOCK(rx_dataset_mutex);
     }
@@ -273,7 +273,7 @@ void rx_slow_hash(const uint64_t mainheight, const uint64_t seedheight, const ch
       rx_vm = randomx_create_vm(flags, rx_sp->rs_cache, rx_dataset);
     }
     if (rx_vm == NULL)
-      local_abort("Couldn't allocate RandomEVO VM");
+      local_abort("Couldn't allocate RandomX VM");
   } else if (miners) {
     CTHR_MUTEX_LOCK(rx_dataset_mutex);
     if (rx_dataset != NULL && rx_dataset_height != seedheight)

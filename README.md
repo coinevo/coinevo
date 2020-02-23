@@ -32,12 +32,12 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 - Web: [coinevo.tech](https://coinevo.tech)
 - Forum: [forum.coinevo.tech](https://forum.coinevo.tech)
 - Mail: [dev@coinevo.tech](mailto:dev@coinevo.tech)
-- GitHub: [https://github.com/coinevo/coinevo](https://github.com/coinevo/coinevo)
+- GitHub: [https://github.com/coinevo-project/coinevo](https://github.com/coinevo-project/coinevo)
 - IRC: [#coinevo-dev on Freenode](https://webchat.freenode.net/?randomnick=1&channels=%23coinevo-dev&prompt=1&uio=d4)
 
 ## Vulnerability response
 
-- Our [Vulnerability Response Process](https://github.com/coinevo/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md) encourages responsible disclosure
+- Our [Vulnerability Response Process](https://github.com/coinevo-project/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md) encourages responsible disclosure
 - We are also available via [HackerOne](https://hackerone.com/coinevo)
 
 ## Research
@@ -84,7 +84,7 @@ These builds are of the master branch, which is used for active development and 
 | Type      | Status |
 |-----------|--------|
 | Coverity  | [![Coverity Status](https://scan.coverity.com/projects/9657/badge.svg)](https://scan.coverity.com/projects/9657/)
-| Coveralls | [![Coveralls Status](https://coveralls.io/repos/github/coinevo/coinevo/badge.svg?branch=master)](https://coveralls.io/github/coinevo/coinevo?branch=master)
+| Coveralls | [![Coveralls Status](https://coveralls.io/repos/github/coinevo-project/coinevo/badge.svg?branch=master)](https://coveralls.io/github/coinevo-project/coinevo?branch=master)
 | License   | [![License](https://img.shields.io/badge/license-BSD3-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Introduction
@@ -221,7 +221,7 @@ FreeBSD one liner for required to build dependencies
 
 Clone recursively to pull-in needed submodule(s):
 
-`$ git clone --recursive https://github.com/coinevo/coinevo`
+`$ git clone --recursive https://github.com/coinevo-project/coinevo`
 
 If you already have a repo cloned, initialize and update:
 
@@ -313,7 +313,7 @@ Tested on a Raspberry Pi Zero with a clean install of minimal Raspbian Stretch (
 * Clone coinevo and checkout the most recent release version:
 
     ```bash
-    git clone https://github.com/coinevo/coinevo.git
+    git clone https://github.com/coinevo-project/coinevo.git
     cd coinevo
     git checkout tags/v0.15.0.1
     ```
@@ -421,7 +421,7 @@ application.
 * To git clone, run:
 
     ```bash
-    git clone --recursive https://github.com/coinevo/coinevo.git
+    git clone --recursive https://github.com/coinevo-project/coinevo.git
     ```
 
 **Building**
@@ -432,7 +432,7 @@ application.
     cd coinevo
     ```
 
-* If you would like a specific [version/tag](https://github.com/coinevo/coinevo/tags), do a git checkout for that version. eg. 'v0.15.0.1'. If you don't care about the version and just want binaries from master, skip this step:
+* If you would like a specific [version/tag](https://github.com/coinevo-project/coinevo/tags), do a git checkout for that version. eg. 'v0.15.0.1'. If you don't care about the version and just want binaries from master, skip this step:
 	
     ```bash
     git checkout v0.15.0.1

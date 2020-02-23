@@ -141,11 +141,11 @@ Setup for docker:
 
 While gitian and this build script does provide a way for you to sign the build directly, it is recommended to sign in a separate step. This script is only there for convenience. Separate steps for building can still be taken.
 In order to sign gitian builds on your host machine, which has your PGP key, 
-fork the [gitian.sigs repository](https://github.com/coinevo/gitian.sigs) and clone it on your host machine, 
+fork the [gitian.sigs repository](https://github.com/coinevo-project/gitian.sigs) and clone it on your host machine, 
 or pass the signed assert file back to your build machine.
 
 ```bash
-git clone git@github.com:coinevo/gitian.sigs.git
+git clone git@github.com:coinevo-project/gitian.sigs.git
 git remote add $GH_USER git@github.com:$GH_USER/gitian.sigs.git
 ```
 
@@ -198,7 +198,7 @@ Submitting your signed assert files
 -----------------------------------
 
 Make a pull request (both the `.assert` and `.assert.sig` files) to the
-[coinevo/gitian.sigs](https://github.com/coinevo/gitian.sigs/) repository:
+[coinevo-project/gitian.sigs](https://github.com/coinevo-project/gitian.sigs/) repository:
 
 ```bash
 git checkout -b $VERSION
@@ -207,7 +207,7 @@ git commit -S -a -m "Add $GH_USER $VERSION"
 git push --set-upstream $GH_USER $VERSION
 ```
 
-**Note:** Please ensure your gpg public key is available to check signatures by adding it to the [gitian.sigs/gitian-pubkeys/](https://github.com/coinevo/gitian.sigs/tree/master/gitian-pubkeys) directory in a pull request.
+**Note:** Please ensure your gpg public key is available to check signatures by adding it to the [gitian.sigs/gitian-pubkeys/](https://github.com/coinevo-project/gitian.sigs/tree/master/gitian-pubkeys) directory in a pull request.
 
 
 More Build Options
