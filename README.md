@@ -30,7 +30,7 @@ Portions Copyright (c) 2012-2013 The Cryptonote developers.
 - Explorer: https://explorer.coinevo.tech
 - Web Wallet: https://wallet.coinevo.tech
 - Forum: [forum.coinevo.tech](https://forum.coinevo.tech)
-- Mail: [dev@coinevo.tech](mailto:dev@coinevo.tech)
+- Mail: [https://discord.gg/XTgDKGW](https://discord.gg/XTgDKGW)
 - GitHub: [https://github.com/coinevo/coinevo](https://github.com/coinevo/coinevo)
 - IRC: [#coinevo-dev on Freenode](https://webchat.freenode.net/?randomnick=1&channels=%23coinevo-dev&prompt=1&uio=d4)
 
