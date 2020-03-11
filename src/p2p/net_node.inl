@@ -610,18 +610,9 @@ namespace nodetool
     }
     else
     {
-      full_addrs.insert("94.177.172.162:33330");
-      full_addrs.insert("80.211.167.27:33330");
-      full_addrs.insert("80.211.152.232:33330");
-      full_addrs.insert("94.177.218.107:33330");
-      full_addrs.insert("31.14.133.120:33330");
-      full_addrs.insert("80.211.80.164:33330");
-      full_addrs.insert("80.211.149.190:33330");
-      full_addrs.insert("212.237.57.16:33330");
-      full_addrs.insert("80.211.136.37:33330");
-      full_addrs.insert("80.211.39.134:33330");
-      full_addrs.insert("80.211.234.253:33330");
-
+      full_addrs.insert("94.177.172.162:44440");
+      full_addrs.insert("80.211.167.27:44440");
+      full_addrs.insert("80.211.152.232:44440");
     }
     return full_addrs;
   }
@@ -648,12 +639,12 @@ namespace nodetool
     m_fallback_seed_nodes_added = false;
     if (m_nettype == cryptonote::TESTNET)
     {
-      memcpy(&m_network_id, &::config::testnet::NETWORK_ID, 16);
+      memcpy(&m_network_id, &::config::NETWORK_ID, 16);
       full_addrs = get_seed_nodes(cryptonote::TESTNET);
     }
     else if (m_nettype == cryptonote::STAGENET)
     {
-      memcpy(&m_network_id, &::config::stagenet::NETWORK_ID, 16);
+      memcpy(&m_network_id, &::config::NETWORK_ID, 16);
       full_addrs = get_seed_nodes(cryptonote::STAGENET);
     }
     else
@@ -762,8 +753,8 @@ namespace nodetool
     network_zone& public_zone = m_network_zones.at(epee::net_utils::zone::public_);
 
     if ((m_nettype == cryptonote::MAINNET && public_zone.m_port != std::to_string(::config::P2P_DEFAULT_PORT))
-        || (m_nettype == cryptonote::TESTNET && public_zone.m_port != std::to_string(::config::testnet::P2P_DEFAULT_PORT))
-        || (m_nettype == cryptonote::STAGENET && public_zone.m_port != std::to_string(::config::stagenet::P2P_DEFAULT_PORT))) {
+        || (m_nettype == cryptonote::TESTNET && public_zone.m_port != std::to_string(::config::P2P_DEFAULT_PORT))
+        || (m_nettype == cryptonote::STAGENET && public_zone.m_port != std::to_string(::config::P2P_DEFAULT_PORT))) {
       m_config_folder = m_config_folder + "/" + public_zone.m_port;
     }
 

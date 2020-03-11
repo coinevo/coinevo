@@ -4097,8 +4097,8 @@ bool wallet2::load_keys(const std::string& keys_file_name, const epee::wipeable_
     // The network type given in the program argument is inconsistent with the network type saved in the wallet
     THROW_WALLET_EXCEPTION_IF(static_cast<uint8_t>(m_nettype) != field_nettype, error::wallet_internal_error,
     (boost::format("%s wallet cannot be opened as %s wallet")
-    % (field_nettype == 0 ? "Mainnet" : field_nettype == 1 ? "Testnet" : "Stagenet")
-    % (m_nettype == MAINNET ? "mainnet" : m_nettype == TESTNET ? "testnet" : "stagenet")).str());
+    % (field_nettype == 0 ? "Testnet" : field_nettype == 1 ? "Testnet" : "Stagenet")
+    % (m_nettype == MAINNET ? "testnet" : m_nettype == TESTNET ? "testnet" : "stagenet")).str());
     GET_FIELD_FROM_JSON_RETURN_ON_ERROR(json, segregate_pre_fork_outputs, int, Int, false, true);
     m_segregate_pre_fork_outputs = field_segregate_pre_fork_outputs;
     GET_FIELD_FROM_JSON_RETURN_ON_ERROR(json, key_reuse_mitigation2, int, Int, false, true);

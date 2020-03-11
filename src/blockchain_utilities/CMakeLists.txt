@@ -200,7 +200,7 @@ target_link_libraries(blockchain_blackball
 
 set_property(TARGET blockchain_blackball
 	PROPERTY
-	OUTPUT_NAME "coinevo-blockchain-mark-spent-outputs")
+	OUTPUT_NAME "testnet-mark-spent-outputs")
 install(TARGETS blockchain_blackball DESTINATION bin)
 
 
@@ -222,7 +222,7 @@ target_link_libraries(blockchain_usage
 
 set_property(TARGET blockchain_usage
 	PROPERTY
-	OUTPUT_NAME "coinevo-blockchain-usage")
+	OUTPUT_NAME "testnet-usage")
 install(TARGETS blockchain_usage DESTINATION bin)
 
 coinevo_add_executable(blockchain_ancestry
@@ -243,7 +243,7 @@ target_link_libraries(blockchain_ancestry
 
 set_property(TARGET blockchain_ancestry
 	PROPERTY
-	OUTPUT_NAME "coinevo-blockchain-ancestry")
+	OUTPUT_NAME "testnet-ancestry")
 install(TARGETS blockchain_ancestry DESTINATION bin)
 
 coinevo_add_executable(blockchain_depth
@@ -264,7 +264,7 @@ target_link_libraries(blockchain_depth
 
 set_property(TARGET blockchain_depth
 	PROPERTY
-	OUTPUT_NAME "coinevo-blockchain-depth")
+	OUTPUT_NAME "testnet-depth")
 install(TARGETS blockchain_depth DESTINATION bin)
 
 coinevo_add_executable(blockchain_stats
@@ -307,7 +307,7 @@ target_link_libraries(blockchain_prune_known_spent_data
 
 set_property(TARGET blockchain_prune_known_spent_data
 	PROPERTY
-	OUTPUT_NAME "coinevo-blockchain-prune-known-spent-data")
+	OUTPUT_NAME "testnet-prune-known-spent-data")
 install(TARGETS blockchain_prune_known_spent_data DESTINATION bin)
 
 coinevo_add_executable(blockchain_prune
@@ -316,7 +316,7 @@ coinevo_add_executable(blockchain_prune
 
 set_property(TARGET blockchain_prune
 	PROPERTY
-	OUTPUT_NAME "coinevo-blockchain-prune")
+	OUTPUT_NAME "testnet-prune")
 install(TARGETS blockchain_prune DESTINATION bin)
 
 target_link_libraries(blockchain_prune

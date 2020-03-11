@@ -199,7 +199,7 @@ VOLUME /home/coinevo/.coinevo
 
 # Generate your wallet via accessing the container and run:
 # cd /wallet
-# coinevo-wallet-cli
+# testnet-cli
 VOLUME /wallet
 
 EXPOSE 33330

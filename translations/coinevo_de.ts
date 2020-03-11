@@ -2294,7 +2294,7 @@ Key Image, &quot;absolute&quot;, list of rings</source>
 To start synchronizing with the daemon, use the &quot;refresh&quot; command.
 Use the &quot;help&quot; command to see the list of available commands.
 Use &quot;help &lt;command&gt;&quot; to see a command&apos;s documentation.
-Always use the &quot;exit&quot; command when closing coinevo-wallet-cli to save 
+Always use the &quot;exit&quot; command when closing testnet-cli to save 
 your current session&apos;s state. Otherwise, you might need to synchronize 
 your wallet again (your wallet keys are NOT at risk in any case).
 </source>
@@ -2302,7 +2302,7 @@ your wallet again (your wallet keys are NOT at risk in any case).
 Um die Synchronisation mit dem Hintergrunddienst zu starten, nutze den Befehl &quot;refresh&quot;.
 Nutze den Befehl &quot;help&quot;, um die Liste verfügbarer Befehle anzusehen.
 Nutze &quot;help &lt;command&gt;&quot;, um die Dokumentation eines Befehls anzuzeigen.
-Benutze stets den &quot;exit&quot;-Befehl, wenn du coinevo-wallet-cli schließt, 
+Benutze stets den &quot;exit&quot;-Befehl, wenn du testnet-cli schließt, 
 um den Status deiner aktuellen Sitzung zu speichern. Anderenfalls ist es eventuell notwendig, 
 deine Wallet erneut zu synchronisieren (deine Wallet-Schlüssel sind in KEINEM Fall in Gefahr).
 </translation>

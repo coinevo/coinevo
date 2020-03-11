@@ -554,7 +554,7 @@ and its home is the data directory specified in the [example
 config](utils/conf/coinevod.conf).
 
 If you're on Mac, you may need to add the `--max-concurrency 1` option to
-coinevo-wallet-cli, and possibly coinevod, if you get crashes refreshing.
+testnet-cli, and possibly coinevod, if you get crashes refreshing.
 
 ## Internationalization
 

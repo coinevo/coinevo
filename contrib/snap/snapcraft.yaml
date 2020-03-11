@@ -16,16 +16,16 @@ apps:
         plugs:
             - network
             - network-bind
-    coinevo-wallet-rpc:
+    testnet-rpc:
         command: |
-          coinevo-wallet-rpc --log-file ${SNAP_USER_DATA}
+          testnet-rpc --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
             - network-bind
-    coinevo-wallet-cli:
+    testnet-cli:
         command: |
-          coinevo-wallet-cli --log-file ${SNAP_USER_DATA}
+          testnet-cli --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network

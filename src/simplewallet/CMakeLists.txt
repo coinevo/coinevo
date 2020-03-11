@@ -61,5 +61,5 @@ target_link_libraries(simplewallet
     ${EXTRA_LIBRARIES})
 set_property(TARGET simplewallet
   PROPERTY
-    OUTPUT_NAME "coinevo-wallet-cli")
+    OUTPUT_NAME "testnet-cli")
 install(TARGETS simplewallet DESTINATION bin)

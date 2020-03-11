@@ -3188,9 +3188,9 @@ namespace cryptonote
     , {{ &cryptonote::arg_testnet_on, &cryptonote::arg_stagenet_on }}
     , [](std::array<bool, 2> testnet_stagenet, bool defaulted, std::string val)->std::string {
         if (testnet_stagenet[0] && defaulted)
-          return std::to_string(config::testnet::RPC_DEFAULT_PORT);
+          return std::to_string(config::RPC_DEFAULT_PORT);
         else if (testnet_stagenet[1] && defaulted)
-          return std::to_string(config::stagenet::RPC_DEFAULT_PORT);
+          return std::to_string(config::RPC_DEFAULT_PORT);
         return val;
       }
     };
