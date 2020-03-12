@@ -206,6 +206,17 @@ namespace config
     } }; // Bender's nightmare
   std::string const GENESIS_TX = "01c80101ff00018080a0b197bcc5c60502150dc00f31f59e0300b431ffc9c5bec5e15608f4d2cd5ac7da76f69f096cbc552101062a356ac56bc41b4024866ac4845ccf95b6041d32fb3eb25e47080b302442b8";
   uint32_t const GENESIS_NONCE = 70;
+  // Hash domain separators
+  const char HASH_KEY_BULLETPROOF_EXPONENT[] = "bulletproof";
+  const char HASH_KEY_RINGDB[] = "ringdsb";
+  const unsigned char HASH_KEY_ENCRYPTED_PAYMENT_ID = 0x8d;
+  const unsigned char HASH_KEY_WALLET = 0x8c;
+  const unsigned char HASH_KEY_WALLET_CACHE = 0x8d;
+  const unsigned char HASH_KEY_RPC_PAYMENT_NONCE = 0x58;
+  const unsigned char HASH_KEY_MEMORY = 'k';
+  const unsigned char HASH_KEY_MULTISIG[] = {'M', 'u', 'l', 't' , 'i', 's', 'i', 'g', 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+
+
 
   namespace testnet
   {/*

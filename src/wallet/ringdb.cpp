@@ -35,6 +35,7 @@
 #include "misc_language.h"
 #include "wallet_errors.h"
 #include "ringdb.h"
+#include "cryptonote_config.h"
 
 #undef COINEVO_DEFAULT_LOG_CATEGORY
 #define COINEVO_DEFAULT_LOG_CATEGORY "wallet.ringdb"
@@ -95,12 +96,10 @@ std::string get_rings_filename(boost::filesystem::path filename)
 
 static crypto::chacha_iv make_iv(const crypto::key_image &key_image, const crypto::chacha_key &key)
 {
-  static const char salt[] = "ringdsb";
-
-  uint8_t buffer[sizeof(key_image) + sizeof(key) + sizeof(salt)];
+  uint8_t buffer[sizeof(key_image) + sizeof(key) + sizeof(config::HASH_KEY_RINGDB)];
   memcpy(buffer, &key_image, sizeof(key_image));
   memcpy(buffer + sizeof(key_image), &key, sizeof(key));
-  memcpy(buffer + sizeof(key_image) + sizeof(key), salt, sizeof(salt));
+   memcpy(buffer + sizeof(key_image) + sizeof(key), config::HASH_KEY_RINGDB, sizeof(config::HASH_KEY_RINGDB));
   crypto::hash hash;
   crypto::cn_fast_hash(buffer, sizeof(buffer), hash.data);
   static_assert(sizeof(hash) >= CHACHA_IV_SIZE, "Incompatible hash and chacha IV sizes");
