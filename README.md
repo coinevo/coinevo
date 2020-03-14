@@ -1,8 +1,8 @@
 # Coinevo
 
 Copyright (c) 2020- The Coinevo Project.   
-Copyright (c) 2014-2019 The Monero Project. 
-Copyright (c) 2018-2019 The Loki Project. 
+Copyright (c) 2014-2019 The Monero Project. <br>
+Copyright (c) 2018-2019 The Loki Project. <br>
 Portions Copyright (c) 2012-2013 The Cryptonote developers.
 
 ## Table of Contents
