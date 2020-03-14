@@ -56,7 +56,7 @@ jobs:
     - name: install coinevo dependencies
       run: sudo apt -y install build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libzmq3-dev libsodium-dev libhidapi-dev libnorm-dev libusb-1.0-0-dev libpgm-dev
     - name: build
-      run: cmake -DBUILD_GUI_DEPS=ON && make -j3
+      run: cmake -DBUILD_GUI_DEPS=ON && make  -j3
 
   test-ubuntu:
     needs: build-ubuntu
