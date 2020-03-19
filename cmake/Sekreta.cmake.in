@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Monero Project
+# Copyright (c) 2019, The Monero Project
 #
 # All rights reserved.
 #
@@ -26,28 +26,22 @@
 # STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 # THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-set(net_sources dandelionpp.cpp error.cpp i2p_address.cpp parse.cpp socks.cpp
-    socks_connect.cpp tor_address.cpp zmq.cpp)
-set(net_headers dandelionpp.h error.h i2p_address.h parse.h socks.h socks_connect.h
-    tor_address.h zmq.h)
+cmake_minimum_required(VERSION 3.10.2...3.16.2)
 
-if (BUILD_SEKRETA)
-  list(APPEND net_headers sekreta.h)
-endif()
+project(sekreta)
 
-coinevo_add_library(net ${net_sources} ${net_headers})
-target_link_libraries(net PRIVATE common epee ${ZMQ_LIB} ${Boost_ASIO_LIBRARY})
+include(ExternalProject)
 
-if (BUILD_SEKRETA)
-  target_compile_definitions(net PUBLIC SEKRETA)
-  target_link_libraries(net PUBLIC sekreta::sekreta)
-  if (BUILD_KOVRI)
-    target_compile_definitions(net PUBLIC KOVRI)
-    target_link_libraries(net PUBLIC kovri::kovri)
-  endif()
-endif()
+ExternalProject_Add(
+  sekreta
+  GIT_REPOSITORY    https://gitlab.com/sekreta/sekreta
+  GIT_TAG           v1.0.0-rc.1
+  GIT_SHALLOW       ON
+  GIT_PROGRESS      ON
+  SOURCE_DIR        "${CMAKE_BINARY_DIR}/sekreta/src"
+  BINARY_DIR        "${CMAKE_BINARY_DIR}/sekreta/build"
+  CMAKE_ARGS        ${SEKRETA_CMAKE_ARGS}
+  BUILD_COMMAND     ${CMAKE_COMMAND} -E chdir <BINARY_DIR> ${CMAKE_COMMAND} ${SEKRETA_CMAKE_ARGS} <SOURCE_DIR>
+  COMMAND           ${CMAKE_COMMAND} --build <BINARY_DIR> -j $(nproc) --target all
+  INSTALL_COMMAND   ${CMAKE_COMMAND} --build <BINARY_DIR> --target install)
 
-# Sekreta/Kovri provides miniupnpc from the same upstream source as Monero, and uses its own targets.
-if (NOT BUILD_KOVRI)
-  target_link_libraries(net PUBLIC libminiupnpc)
-endif()

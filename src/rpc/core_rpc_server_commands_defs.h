@@ -88,7 +88,16 @@ namespace cryptonote
 // advance which version they will stop working with
 // Don't go over 32767 for any of these
 #define CORE_RPC_VERSION_MAJOR 3
+#if defined(SEKRETA)
+// TODO(anonimal): is bumping minor for only `#if defined(SEKRETA)` safe to do?
+//   A client can enumerate a public node to see if the node has anonymizing
+//   features and some nodes may purposefully be behind a NAT so that their
+//   untranslated IP (not a private subnet) is not listed in a public database
+//   (such as an I2P-style NetDb).
+#define CORE_RPC_VERSION_MINOR 1
+#else
 #define CORE_RPC_VERSION_MINOR 0
+ #endif
 #define MAKE_CORE_RPC_VERSION(major,minor) (((major)<<16)|(minor))
 #define CORE_RPC_VERSION MAKE_CORE_RPC_VERSION(CORE_RPC_VERSION_MAJOR, CORE_RPC_VERSION_MINOR)
 
