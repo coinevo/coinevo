@@ -15,6 +15,7 @@ if (NOT BUILD_KOVRI)
   set(MINIUPNP_SHORT_LIB libminiupnpc.a)
   if (NOT STATIC)
     set(MINIUPNP_SHORT_LIB miniupnpc)
+  endif()
 
   find_library(MINIUPNP_LIBRARY ${MINIUPNP_SHORT_LIB}
     HINTS $ENV{MINIUPNP_LIBRARY})
