@@ -1,9 +1,6 @@
 [submodule "external/randomx"]
 	path = external/randomx
 	url = https://github.com/coinevo/RandomEVO
-[submodule "external/miniupnp"]
-	path = external/miniupnp
-	url = https://github.com/monero-project/miniupnp
 [submodule "external/rapidjson"]
 	path = external/rapidjson
 	url = https://github.com/Tencent/rapidjson
