@@ -201,6 +201,9 @@ namespace config
   uint16_t const P2P_DEFAULT_PORT = 33330;
   uint16_t const RPC_DEFAULT_PORT = 33331;
   uint16_t const ZMQ_RPC_DEFAULT_PORT = 33332;
+#if defined(SEKRETA)
+  uint16_t const SEK_RPC_DEFAULT_PORT = 33333;  //!< Client port
+#endif
   boost::uuids::uuid const NETWORK_ID = { {
        0x12 ,0x30, 0xF1, 0x71 , 0x70, 0x04 , 0x41, 0x61, 0x17, 0x12, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x11
     } }; // Bender's nightmare
@@ -224,6 +227,9 @@ namespace config
     uint16_t const P2P_DEFAULT_PORT = 44440;
     uint16_t const RPC_DEFAULT_PORT = 44441;
     uint16_t const ZMQ_RPC_DEFAULT_PORT = 44442;
+#if defined(SEKRETA)
+    uint16_t const SEK_RPC_DEFAULT_PORT = 44443;  //!< Client port
+#endif
     boost::uuids::uuid const NETWORK_ID = { {
         0x12 ,0x30, 0xF1, 0x75 , 0x62, 0x04 , 0x41, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x11
       } }; // Bender's daydream
@@ -239,6 +245,9 @@ namespace config
     uint16_t const P2P_DEFAULT_PORT = 55550;
     uint16_t const RPC_DEFAULT_PORT = 55551;
     uint16_t const ZMQ_RPC_DEFAULT_PORT = 55552;
+#if defined(SEKRETA)
+     uint16_t const SEK_RPC_DEFAULT_PORT = 55553;  //!< Client port
+#endif
     boost::uuids::uuid const NETWORK_ID = { {
         0x12 ,0x30, 0xF1, 0x71 , 0x61, 0x04 , 0x42, 0x61, 0x17, 0x31, 0x00, 0x82, 0x16, 0xA1, 0xA1, 0x12
       } }; // Bender's daydream
@@ -265,6 +274,9 @@ namespace cryptonote
     uint16_t const P2P_DEFAULT_PORT;
     uint16_t const RPC_DEFAULT_PORT;
     uint16_t const ZMQ_RPC_DEFAULT_PORT;
+#if defined(SEKRETA)
+    uint16_t const SEK_RPC_DEFAULT_PORT;  //!< Client port
+#endif
     boost::uuids::uuid const NETWORK_ID;
     std::string const GENESIS_TX;
     uint32_t const GENESIS_NONCE;
@@ -278,6 +290,9 @@ namespace cryptonote
       ::config::P2P_DEFAULT_PORT,
       ::config::RPC_DEFAULT_PORT,
       ::config::ZMQ_RPC_DEFAULT_PORT,
+#if defined(SEKRETA)
+      ::config::SEK_RPC_DEFAULT_PORT,  //!< Client port
+#endif
       ::config::NETWORK_ID,
       ::config::GENESIS_TX,
       ::config::GENESIS_NONCE
@@ -289,6 +304,9 @@ namespace cryptonote
       ::config::testnet::P2P_DEFAULT_PORT,
       ::config::testnet::RPC_DEFAULT_PORT,
       ::config::testnet::ZMQ_RPC_DEFAULT_PORT,
+#if defined(SEKRETA)
+      ::config::testnet::SEK_RPC_DEFAULT_PORT,  //!< Client port
+#endif
       ::config::testnet::NETWORK_ID,
       ::config::testnet::GENESIS_TX,
       ::config::testnet::GENESIS_NONCE
@@ -300,6 +318,9 @@ namespace cryptonote
       ::config::stagenet::P2P_DEFAULT_PORT,
       ::config::stagenet::RPC_DEFAULT_PORT,
       ::config::stagenet::ZMQ_RPC_DEFAULT_PORT,
+#if defined(SEKRETA)
+      ::config::stagenet::SEK_RPC_DEFAULT_PORT,  //!< Client port
+#endif
       ::config::stagenet::NETWORK_ID,
       ::config::stagenet::GENESIS_TX,
       ::config::stagenet::GENESIS_NONCE

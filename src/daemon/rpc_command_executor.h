@@ -46,6 +46,10 @@
 #include "net/net_fwd.h"
 #include "rpc/core_rpc_server.h"
 
+#if defined(SEKRETA)
+#include "net/sekreta.h"
+#endif
+
 #undef COINEVO_DEFAULT_LOG_CATEGORY
 #define COINEVO_DEFAULT_LOG_CATEGORY "daemon"
 
@@ -103,6 +107,10 @@ public:
 
   bool print_transaction_pool_long();
 
+#if defined(SEKRETA)
+  bool sekreta(
+      const ::sekreta::api::impl_helper::DaemonArgs<std::string>& args);
+#endif
   bool print_transaction_pool_short();
 
   bool print_transaction_pool_stats();

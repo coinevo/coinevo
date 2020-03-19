@@ -1,11 +1,11 @@
 # Anonymity Networks with Coinevo
 
-Currently only Tor and I2P have been integrated into Coinevo. The usage of
-these networks is still considered experimental - there are a few pessimistic
-cases where privacy is leaked. The design is intended to maximize privacy of
-the source of a transaction by broadcasting it over an anonymity network, while
-relying on IPv4 for the remainder of messages to make surrounding node attacks
-(via sybil) more difficult.
+Currently only Tor, I2P, Sekreta, and Kovri have been integrated into Monero.
+The usage of these networks is still considered experimental - there are a few
+pessimistic cases where privacy is leaked. The design is intended to maximize
+privacy of the source of a transaction by broadcasting it over an anonymity
+network, while relying on IPv4 for the remainder of messages to make surrounding
+node attacks (via sybil) more difficult.
 
 
 ## Behavior
