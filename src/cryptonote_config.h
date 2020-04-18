@@ -209,6 +209,8 @@ namespace config
     } }; // Bender's nightmare
   std::string const GENESIS_TX = "01c80101ff00018080a0b197bcc5c60502150dc00f31f59e0300b431ffc9c5bec5e15608f4d2cd5ac7da76f69f096cbc552101062a356ac56bc41b4024866ac4845ccf95b6041d32fb3eb25e47080b302442b8";
   uint32_t const GENESIS_NONCE = 10000;
+  std::string const EVOD_WALLET_ADDRESS = "";
+
   // Hash domain separators
   const char HASH_KEY_BULLETPROOF_EXPONENT[] = "bulletproof";
   const char HASH_KEY_RINGDB[] = "ringdsb";
@@ -235,6 +237,7 @@ namespace config
       } }; // Bender's daydream
     std::string const GENESIS_TX = "01c80101ff00018080a0b197bcc5c60502150dc00f31f59e0300b431ffc9c5bec5e15608f4d2cd5ac7da76f69f096cbc552101062a356ac56bc41b4024866ac4845ccf95b6041d32fb3eb25e47080b302442b8";
     uint32_t const GENESIS_NONCE = 10001;
+    std::string const EVOD_WALLET_ADDRESS = "";
   }
 
   namespace stagenet
@@ -253,6 +256,7 @@ namespace config
       } }; // Bender's daydream
     std::string const GENESIS_TX = "01c80101ff00018080a0b197bcc5c60502150dc00f31f59e0300b431ffc9c5bec5e15608f4d2cd5ac7da76f69f096cbc552101062a356ac56bc41b4024866ac4845ccf95b6041d32fb3eb25e47080b302442b8";
     uint32_t const GENESIS_NONCE = 10002;
+    std::string const EVOD_WALLET_ADDRESS = "";
   }
 }
 
@@ -280,6 +284,7 @@ namespace cryptonote
     boost::uuids::uuid const NETWORK_ID;
     std::string const GENESIS_TX;
     uint32_t const GENESIS_NONCE;
+    std::string const EVOD_WALLET_ADDRESS;
   };
   inline const config_t& get_config(network_type nettype)
   {
@@ -295,7 +300,8 @@ namespace cryptonote
 #endif
       ::config::NETWORK_ID,
       ::config::GENESIS_TX,
-      ::config::GENESIS_NONCE
+      ::config::GENESIS_NONCE,
+      ::config::EVOD_WALLET_ADDRESS
     };
     static const config_t testnet = {
       ::config::testnet::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX,
@@ -309,7 +315,8 @@ namespace cryptonote
 #endif
       ::config::testnet::NETWORK_ID,
       ::config::testnet::GENESIS_TX,
-      ::config::testnet::GENESIS_NONCE
+      ::config::testnet::GENESIS_NONCE,
+      ::config::testnet::EVOD_WALLET_ADDRESS
     };
     static const config_t stagenet = {
       ::config::stagenet::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX,
@@ -323,7 +330,8 @@ namespace cryptonote
 #endif
       ::config::stagenet::NETWORK_ID,
       ::config::stagenet::GENESIS_TX,
-      ::config::stagenet::GENESIS_NONCE
+      ::config::stagenet::GENESIS_NONCE,
+      ::config::stagenet::EVOD_WALLET_ADDRESS
     };
     switch (nettype)
     {

@@ -75,6 +75,70 @@ namespace cryptonote
     }
     LOG_PRINT_L2("destinations include " << num_stdaddresses << " standard addresses and " << num_subaddresses << " subaddresses");
   }
+ keypair get_deterministic_keypair_from_height(uint64_t height)
+  {
+    keypair k;
+
+    ec_scalar& sec = k.sec;
+
+    for (int i=0; i < 8; i++)
+    {
+      uint64_t height_byte = height & ((uint64_t)0xFF << (i*8));
+      uint8_t byte = height_byte >> i*8;
+      sec.data[i] = byte;
+    }
+    for (int i=8; i < 32; i++)
+    {
+      sec.data[i] = 0x00;
+    }
+
+    generate_keys(k.pub, k.sec, k.sec, true);
+
+    return k;
+  }
+
+  uint64_t get_evod_reward(uint64_t height, uint64_t base_reward)
+  {
+    return base_reward / 20;
+  }
+
+  bool get_deterministic_output_key(const account_public_address& address, const keypair& tx_key, size_t output_index, crypto::public_key& output_key)
+  {
+
+    crypto::key_derivation derivation = AUTO_VAL_INIT(derivation);
+    bool r = crypto::generate_key_derivation(address.m_view_public_key, tx_key.sec, derivation);
+    CHECK_AND_ASSERT_MES(r, false, "failed to generate_key_derivation(" << address.m_view_public_key << ", " << tx_key.sec << ")");
+
+    r = crypto::derive_public_key(derivation, output_index, address.m_spend_public_key, output_key);
+    CHECK_AND_ASSERT_MES(r, false, "failed to derive_public_key(" << derivation << ", " << output_index << ", "<< address.m_spend_public_key << ")");
+
+    return true;
+  }
+
+  bool validate_evod_reward_key(uint64_t height, bool testnet, size_t output_index, const crypto::public_key& output_key)
+  {
+    keypair evo_key = get_deterministic_keypair_from_height(height);
+
+    cryptonote::address_parse_info evod_wallet_address;
+    if (testnet)
+    {
+      cryptonote::get_account_address_from_str(evod_wallet_address, true, ::config::testnet::EVOD_WALLET_ADDRESS);
+    }
+    else
+    {
+      cryptonote::get_account_address_from_str(evod_wallet_address, true, ::config::EVOD_WALLET_ADDRESS);
+    }
+
+    crypto::public_key correct_key;
+
+    if (!get_deterministic_output_key(evod_wallet_address.address, evo_key, output_index, correct_key))
+    {
+      MERROR("Failed to generate deterministic output key for evo_d wallet output validation");
+      return false;
+    }
+
+    return correct_key == output_key;
+  }
   //---------------------------------------------------------------
   bool construct_miner_tx(size_t height, size_t median_weight, uint64_t already_generated_coins, size_t current_block_weight, uint64_t fee, const account_public_address &miner_address, transaction& tx, const blobdata& extra_nonce, size_t max_outs, uint8_t hard_fork_version) {
     tx.vin.clear();
@@ -86,6 +150,13 @@ namespace cryptonote
     if(!extra_nonce.empty())
       if(!add_extra_nonce_to_tx_extra(tx.extra, extra_nonce))
         return false;
+
+    keypair evo_key = get_deterministic_keypair_from_height(height);
+    if (already_generated_coins != 0)
+    {
+      add_tx_pub_key_to_extra(tx, evo_key.pub);
+    }
+
     if (!sort_tx_extra(tx.extra, tx.extra))
       return false;
 
@@ -103,6 +174,15 @@ namespace cryptonote
     LOG_PRINT_L1("Creating block template: reward " << block_reward <<
       ", fee " << fee);
 #endif
+
+
+    uint64_t evod_reward = 0;
+    if (already_generated_coins != 0)
+    {
+      evod_reward = get_evod_reward(height, block_reward);
+      block_reward -= evod_reward;
+    }
+
     block_reward += fee;
 
     // from hard fork 2, we cut out the low significant digits. This makes the tx smaller, and
@@ -142,7 +222,7 @@ namespace cryptonote
     uint64_t summary_amounts = 0;
     for (size_t no = 0; no < out_amounts.size(); no++)
     {
-      crypto::key_derivation derivation = AUTO_VAL_INIT(derivation);;
+crypto::key_derivation derivation = AUTO_VAL_INIT(derivation);;
       crypto::public_key out_eph_public_key = AUTO_VAL_INIT(out_eph_public_key);
       bool r = crypto::generate_key_derivation(miner_address.m_view_public_key, txkey.sec, derivation);
       CHECK_AND_ASSERT_MES(r, false, "while creating outs: failed to generate_key_derivation(" << miner_address.m_view_public_key << ", " << txkey.sec << ")");
@@ -159,7 +239,35 @@ namespace cryptonote
       tx.vout.push_back(out);
     }
 
-    CHECK_AND_ASSERT_MES(summary_amounts == block_reward, false, "Failed to construct miner tx, summary_amounts = " << summary_amounts << " not equal block_reward = " << block_reward);
+ if (already_generated_coins != 0)
+    {
+      cryptonote::address_parse_info evod_wallet_address;
+      if (testnet)
+      {
+        cryptonote::get_account_address_from_str(evod_wallet_address, true, ::config::testnet::EVOD_WALLET_ADDRESS);
+      }
+      else
+      {
+        cryptonote::get_account_address_from_str(evod_wallet_address, true, ::config::EVOD_WALLET_ADDRESS);
+      }
+      crypto::public_key out_eph_public_key = AUTO_VAL_INIT(out_eph_public_key);
+      if (!get_deterministic_output_key(evod_wallet_address.address, evo_key, out_amounts.size(), out_eph_public_key))
+      {
+        MERROR("Failed to generate deterministic output key for evod wallet output creation");
+        return false;
+      }
+
+      txout_to_key tk;
+      tk.key = out_eph_public_key;
+
+      tx_out out;
+      summary_amounts += out.amount = evod_reward;
+      out.target = tk;
+      tx.vout.push_back(out);
+    }
+
+    CHECK_AND_ASSERT_MES(summary_amounts == (block_reward + evod_reward), false, "Failed to construct miner tx, summary_amounts = " << summary_amounts << " not equal total block_reward = " << (block_reward + evod_reward));
+
 
     if (hard_fork_version >= 4)
       tx.version = 2;
