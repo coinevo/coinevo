@@ -115,32 +115,38 @@ namespace cryptonote
     return true;
   }
 
-  bool validate_evod_reward_key(uint64_t height, bool testnet, size_t output_index, const crypto::public_key& output_key)
+  bool validate_evod_reward_key(uint64_t height, const std::string& evod_wallet_address_str, size_t output_index, const crypto::public_key& output_key, const cryptonote::network_type nettype)
   {
     keypair evo_key = get_deterministic_keypair_from_height(height);
 
     cryptonote::address_parse_info evod_wallet_address;
-    if (testnet)
+    switch (nettype)
     {
-      cryptonote::get_account_address_from_str(evod_wallet_address, true, ::config::testnet::EVOD_WALLET_ADDRESS);
-    }
-    else
-    {
-      cryptonote::get_account_address_from_str(evod_wallet_address, true, ::config::EVOD_WALLET_ADDRESS);
+      case STAGENET:
+        cryptonote::get_account_address_from_str(evod_wallet_address, cryptonote::STAGENET, evod_wallet_address_str);
+        break;
+      case TESTNET:
+        cryptonote::get_account_address_from_str(evod_wallet_address, cryptonote::TESTNET, evod_wallet_address_str);
+        break;
+      case FAKECHAIN: case MAINNET:
+        cryptonote::get_account_address_from_str(evod_wallet_address, cryptonote::MAINNET, evod_wallet_address_str);
+        break;
+      default:
+        return false;
     }
 
     crypto::public_key correct_key;
 
     if (!get_deterministic_output_key(evod_wallet_address.address, evo_key, output_index, correct_key))
     {
-      MERROR("Failed to generate deterministic output key for evo_d wallet output validation");
+      MERROR("Failed to generate deterministic output key for coineoo_d wallet output validation");
       return false;
     }
 
     return correct_key == output_key;
   }
   //---------------------------------------------------------------
-  bool construct_miner_tx(size_t height, size_t median_weight, uint64_t already_generated_coins, size_t current_block_weight, uint64_t fee, const account_public_address &miner_address, transaction& tx, const blobdata& extra_nonce, size_t max_outs, uint8_t hard_fork_version) {
+  bool construct_miner_tx(size_t height, size_t median_weight, uint64_t already_generated_coins, size_t current_block_weight, uint64_t fee, const account_public_address &miner_address, transaction& tx, const blobdata& extra_nonce, size_t max_outs, uint8_t hard_fork_version, network_type nettype) {
     tx.vin.clear();
     tx.vout.clear();
     tx.extra.clear();
@@ -239,21 +245,34 @@ crypto::key_derivation derivation = AUTO_VAL_INIT(derivation);;
       tx.vout.push_back(out);
     }
 
- if (already_generated_coins != 0)
+
+
+    if (already_generated_coins != 0)
     {
+      std::string evod_wallet_address_str;
+
       cryptonote::address_parse_info evod_wallet_address;
-      if (testnet)
+      switch (nettype)
       {
-        cryptonote::get_account_address_from_str(evod_wallet_address, true, ::config::testnet::EVOD_WALLET_ADDRESS);
+        case STAGENET:
+          cryptonote::get_account_address_from_str(evod_wallet_address, cryptonote::STAGENET, ::config::stagenet::EVOD_WALLET_ADDRESS);
+          break;
+        case TESTNET:
+          cryptonote::get_account_address_from_str(evod_wallet_address, cryptonote::TESTNET, ::config::testnet::EVOD_WALLET_ADDRESS);
+          break;
+        case FAKECHAIN: case MAINNET:
+          cryptonote::get_account_address_from_str(evod_wallet_address, cryptonote::MAINNET, ::config::EVOD_WALLET_ADDRESS);
+          break;
+        default:
+          return false;
       }
-      else
-      {
-        cryptonote::get_account_address_from_str(evod_wallet_address, true, ::config::EVOD_WALLET_ADDRESS);
-      }
+
+
       crypto::public_key out_eph_public_key = AUTO_VAL_INIT(out_eph_public_key);
-      if (!get_deterministic_output_key(evod_wallet_address.address, evo_key, out_amounts.size(), out_eph_public_key))
+
+      if (!get_deterministic_output_key(evod_wallet_address.address, evo_key, tx.vout.size(), out_eph_public_key))
       {
-        MERROR("Failed to generate deterministic output key for evod wallet output creation");
+        MERROR("Failed to generate deterministic output key for coinevo_d wallet output creation");
         return false;
       }
 

@@ -1192,19 +1192,36 @@ bool Blockchain::validate_miner_transaction(const block& b, size_t cumulative_bl
     MERROR_VER("block weight " << cumulative_block_weight << " is bigger than allowed for this blockchain");
     return false;
   }
+
   if (already_generated_coins != 0)
   {
     uint64_t evod_reward = get_evod_reward(m_db->height(), base_reward);
 
     if (b.miner_tx.vout.back().amount != evod_reward)
     {
-      MERROR("Coinevo_D reward amount incorrect.  Should be: " << print_money(evod_reward) << ", is: " << print_money(b.miner_tx.vout.back().amount));
+      MERROR("Coinevod reward amount incorrect.  Should be: " << print_money(evod_reward) << ", is: " << print_money(b.miner_tx.vout.back().amount));
       return false;
     }
 
-    if (!validate_evod_reward_key(m_db->height(), m_testnet, b.miner_tx.vout.size() - 1, boost::get<txout_to_key>(b.miner_tx.vout.back().target).key))
+    std::string evod_wallet_address_str;
+    switch (m_nettype)
     {
-      MERROR("Coinevo_D reward public key incorrect.");
+      case STAGENET:
+        evod_wallet_address_str = ::config::stagenet::EVOD_WALLET_ADDRESS;
+        break;
+      case TESTNET:
+        evod_wallet_address_str = ::config::testnet::EVOD_WALLET_ADDRESS;
+        break;
+      case FAKECHAIN: case MAINNET:
+        evod_wallet_address_str = ::config::EVOD_WALLET_ADDRESS;
+        break;
+      default:
+        return false;
+    }
+
+    if (!validate_evod_reward_key(m_db->height(), evod_wallet_address_str, b.miner_tx.vout.size() - 1, boost::get<txout_to_key>(b.miner_tx.vout.back().target).key, m_nettype))
+    {
+      MERROR("Coinevod reward public key incorrect.");
       return false;
     }
   }
@@ -1497,7 +1514,9 @@ bool Blockchain::create_block_template(block& b, const crypto::hash *from_block,
   //make blocks coin-base tx looks close to real coinbase tx to get truthful blob weight
   uint8_t hf_version = b.major_version;
   size_t max_outs = hf_version >= 4 ? 1 : 11;
-  bool r = construct_miner_tx(height, median_weight, already_generated_coins, txs_weight, fee, miner_address, b.miner_tx, ex_nonce, max_outs, hf_version);
+  bool r = construct_miner_tx(height, median_weight, already_generated_coins, txs_weight, fee, miner_address, b.miner_tx, ex_nonce, max_outs, hf_version, m_nettype);
+  //bool r = construct_miner_tx(height, median_weight, already_generated_coins, txs_weight, fee, miner_address, b.miner_tx, ex_nonce, hf_version, m_nettype);
+//  bool r = construct_miner_tx(height, median_weight, already_generated_coins, txs_weight, fee, miner_address, b.miner_tx, ex_nonce, hf_version);
   CHECK_AND_ASSERT_MES(r, false, "Failed to construct miner tx, first chance");
   size_t cumulative_weight = txs_weight + get_transaction_weight(b.miner_tx);
 #if defined(DEBUG_CREATE_BLOCK_TEMPLATE)
