@@ -209,7 +209,7 @@ namespace config
     } }; // Bender's nightmare
   std::string const GENESIS_TX = "01c80101ff00018080a0b197bcc5c60502150dc00f31f59e0300b431ffc9c5bec5e15608f4d2cd5ac7da76f69f096cbc552101062a356ac56bc41b4024866ac4845ccf95b6041d32fb3eb25e47080b302442b8";
   uint32_t const GENESIS_NONCE = 10000;
-  std::string const EVOD_WALLET_ADDRESS = "";
+  std::string const EVOD_WALLET_ADDRESS = "47yLe8q4sy8JPGxsrPHQqifDeSUMuhLtb2sxTNE2RPKfiUtp1BddYaAAGC9QXeNdzaQzzue66K5hmDxi8PAQ72ge8kPDo29";
 
   // Hash domain separators
   const char HASH_KEY_BULLETPROOF_EXPONENT[] = "bulletproof";
@@ -237,7 +237,7 @@ namespace config
       } }; // Bender's daydream
     std::string const GENESIS_TX = "01c80101ff00018080a0b197bcc5c60502150dc00f31f59e0300b431ffc9c5bec5e15608f4d2cd5ac7da76f69f096cbc552101062a356ac56bc41b4024866ac4845ccf95b6041d32fb3eb25e47080b302442b8";
     uint32_t const GENESIS_NONCE = 10001;
-    std::string const EVOD_WALLET_ADDRESS = "";
+    std::string const EVOD_WALLET_ADDRESS = "97yLe8q4sy8JPGxsrPHQqifDeSUMuhLtb2sxTNE2RPKfiUtp1BddYaAAGC9QXeNdzaQzzue66K5hmDxi8PAQ72ge8kPDo29";
   }
 
   namespace stagenet
@@ -256,7 +256,7 @@ namespace config
       } }; // Bender's daydream
     std::string const GENESIS_TX = "01c80101ff00018080a0b197bcc5c60502150dc00f31f59e0300b431ffc9c5bec5e15608f4d2cd5ac7da76f69f096cbc552101062a356ac56bc41b4024866ac4845ccf95b6041d32fb3eb25e47080b302442b8";
     uint32_t const GENESIS_NONCE = 10002;
-    std::string const EVOD_WALLET_ADDRESS = "";
+    std::string const EVOD_WALLET_ADDRESS = "5yLe8q4sy8JPGxsrPHQqifDeSUMuhLtb2sxTNE2RPKfiUtp1BddYaAAGC9QXeNdzaQzzue66K5hmDxi8PAQ72ge8kPDo29";
   }
 }
 

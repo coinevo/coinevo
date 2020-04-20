@@ -1193,7 +1193,7 @@ bool Blockchain::validate_miner_transaction(const block& b, size_t cumulative_bl
     return false;
   }
 
-  if (already_generated_coins != 0)
+  if (already_generated_coins != 0 && version >= 14)
   {
     uint64_t evod_reward = get_evod_reward(m_db->height(), base_reward);
 

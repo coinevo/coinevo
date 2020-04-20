@@ -97,10 +97,11 @@ namespace cryptonote
     return k;
   }
 
-  uint64_t get_evod_reward(uint64_t height, uint64_t base_reward)
-  {
-    return base_reward / 20;
-  }
+  
+  uint64_t get_evod_reward(uint64_t height, uint64_t base_reward){
+      	  return base_reward / 20;
+   }
+
 
   bool get_deterministic_output_key(const account_public_address& address, const keypair& tx_key, size_t output_index, crypto::public_key& output_key)
   {
@@ -158,7 +159,7 @@ namespace cryptonote
         return false;
 
     keypair evo_key = get_deterministic_keypair_from_height(height);
-    if (already_generated_coins != 0)
+    if (already_generated_coins != 0 && hard_fork_version >= 14)
     {
       add_tx_pub_key_to_extra(tx, evo_key.pub);
     }
@@ -183,7 +184,7 @@ namespace cryptonote
 
 
     uint64_t evod_reward = 0;
-    if (already_generated_coins != 0)
+    if (already_generated_coins != 0 && hard_fork_version >= 14)
     {
       evod_reward = get_evod_reward(height, block_reward);
       block_reward -= evod_reward;
@@ -247,7 +248,7 @@ crypto::key_derivation derivation = AUTO_VAL_INIT(derivation);;
 
 
 
-    if (already_generated_coins != 0)
+    if (already_generated_coins != 0 && hard_fork_version >= 14)
     {
       std::string evod_wallet_address_str;
 
