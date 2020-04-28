@@ -46,6 +46,7 @@ const hardfork_t mainnet_hard_forks[] = {
   { 11, 40, 0, 1581539405 },
   { 12, 45, 0, 1581540005 },
   { 13, 25417, 0, 1584742450},
+   { 14, 49000, 0, 1587748185}, //evod address
 };
 const size_t num_mainnet_hard_forks = sizeof(mainnet_hard_forks) / sizeof(mainnet_hard_forks[0]);
 //const uint64_t mainnet_hard_fork_version_1_till = 1009826;

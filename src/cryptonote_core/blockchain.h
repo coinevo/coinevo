@@ -757,6 +757,7 @@ namespace cryptonote
      */
     void set_reorg_notify(const std::shared_ptr<tools::Notify> &notify) { m_reorg_notify = notify; }
 
+     network_type nettype() const { return m_nettype; }	
     /**
      * @brief Put DB in safe sync mode
      */
