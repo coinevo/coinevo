@@ -3676,8 +3676,6 @@ tr(USAGE_SEKRETA),
                            boost::bind(&simple_wallet::stop_mining_for_rpc, this, _1),
                            tr(USAGE_STOP_MINING_FOR_RPC),
                            tr("Stop mining to pay for RPC access"));
-<<<<<<< HEAD
-=======
   m_cmd_binder.set_handler("show_qr_code",
                            boost::bind(&simple_wallet::show_qr_code, this, _1),
                            tr(USAGE_SHOW_QR_CODE),
@@ -3686,7 +3684,6 @@ tr(USAGE_SEKRETA),
                            boost::bind(&simple_wallet::on_command, this, &simple_wallet::help_advanced, _1),
                            tr(USAGE_HELP_ADVANCED),
                            tr("Show the help section or the documentation about a <command>."));
->>>>>>> 037902e5a... simplewallet: add show_qr_code command
   m_cmd_binder.set_handler("help",
                            boost::bind(&simple_wallet::on_command, this, &simple_wallet::help, _1),
                            tr(USAGE_HELP),
